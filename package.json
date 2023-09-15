@@ -2,9 +2,10 @@
   "name": "cheatsheets",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node ./src/index.ts",
+    "start": "ts-node src/index.ts",
     "start:dev": "ts-node-dev --respawn --watch cheatsheets/**/*.md,cheatsheets/**/*.json,src/templates/*.ejs ./src/index.ts"
   },
   "keywords": [],

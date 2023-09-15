@@ -1,67 +1,41 @@
-import MarkdownIt from 'markdown-it';
-import MarkdownItContainer from 'markdown-it-container';
-import highlightjs from 'markdown-it-highlightjs';
 import ejs from 'ejs';
-const fs = require('fs');
+import fs from 'fs';
+import MarkdownIt from 'markdown-it';
+import highlightjs from 'markdown-it-highlightjs';
+import { TemplateType } from './templates/template.type';
 
 const templatesDir: string = './src/templates/';
 const cheatsheetDir: string = './cheatsheets/';
 const outDir: string = './dist/';
 
-const markdown = new MarkdownIt({})
-  .use(highlightjs)
-  .use(MarkdownItContainer, 'row', {
-    render: (tokens: any, id: number) => {
-
-      if (tokens[id].nesting === 1) {
-        const row = tokens[id].info.split(' ')[2];
-        if (row) {
-          return `<div class="row-${row}">`;
-        } else {
-          return `<div class="row">`;
-        }
-      } else {
-        return '</div>';
-      }
-    }
-  })
-  .use(MarkdownItContainer, 'column', {
-    render: (tokens: any, id: number) => {
-
-      if (tokens[id].nesting === 1) {
-        const col = tokens[id].info.split(' ')[2];
-        if (col) {
-          return `<div class="col-${col}">`;
-        } else {
-          return `<div class="col">`;
-        }
-      } else {
-        return '</div>';
-      }
-    }
-  });
-
-markdown.renderer.rules.heading_open = function(tokens, i) {
-  const token = tokens[i];
-  return `<h${parseInt(token.tag.substring(1)) + 1}>`;
-};
-
-markdown.renderer.rules.heading_close = function(tokens, i) {
-  const token = tokens[i];
-  return `</h${parseInt(token.tag.substring(1)) + 1}>`;
-};
-
+// get list of available cheatsheets
 const cheatsheets = fs.readdirSync(cheatsheetDir, {withFileTypes: true})
   .filter((dirent: any) => dirent.isDirectory())
   .map((dir: any) => dir.name);
 
+// remove old dist folder if exist
 fs.rmSync('./dist', { recursive: true, force: true });
+
+// create dist folder
 fs.mkdirSync('./dist');
 
 for (let cheatsheet of cheatsheets) {
-  console.log(`Building ${cheatsheet} cheatsheet.`);
+  // create template driven markdownit instance
+  const markdown = new MarkdownIt({}).use(highlightjs);
+
+  console.log(`${cheatsheet} cheatsheet.`);
+  // load cheatsheet configuration
   const config = JSON.parse(fs.readFileSync(`${cheatsheetDir}${cheatsheet}/config.json`).toString());
+
+  console.log(`Initialize ${config.template} template.`);
+  // get template specific scripts and run it
+  const templateScript: TemplateType = (await import(`.${templatesDir}${config.template}/index.ts`)).default;
+  templateScript.initializeTemplate(markdown);
+
+  console.log(`Render ${config.template} template.`);
+  // render html body with markdownit
   const rendered = markdown.render(fs.readFileSync(`${cheatsheetDir}${cheatsheet}/index.md`).toString());
+
   const context = {
     title: config.name,
     mainColor: config.mainColor,
@@ -70,6 +44,8 @@ for (let cheatsheet of cheatsheets) {
     icon: config.icon
   };
 
+  console.log(`Create ${config.template} HTML page.`);
+  // create cheatsheet package with html page and assets
   fs.mkdirSync(`${outDir}${cheatsheet}`);
   const html = ejs.render(fs.readFileSync(`${templatesDir}${config.template}/index.ejs`).toString(), context);
   fs.writeFileSync(`${outDir}${cheatsheet}/cheatsheet.html`, html);
