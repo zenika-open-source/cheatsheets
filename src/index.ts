@@ -8,19 +8,29 @@ const templatesDir: string = './src/templates/';
 const cheatsheetDir: string = './cheatsheets/';
 const outDir: string = './dist/';
 
-// get list of available cheatsheets
-const cheatsheets = fs.readdirSync(cheatsheetDir, {withFileTypes: true})
-  .filter((dirent: any) => dirent.isDirectory())
-  .map((dir: any) => dir.name);
 
-// remove old dist folder if exist
-fs.rmSync('./dist', { recursive: true, force: true });
+/**
+ * Get list of available cheatsheets
+ */
+function getCheatsheetsList(): string[] {
+  return fs.readdirSync(cheatsheetDir, {withFileTypes: true})
+    .filter((dirent: any) => dirent.isDirectory())
+    .map((dir: any) => dir.name);
+}
 
-// create dist folder
-fs.mkdirSync('./dist');
+/**
+ * Remove old dist folder and create new empty one
+ */
+function clearDist(): void {
+  fs.rmSync('./dist', { recursive: true, force: true });
+  fs.mkdirSync('./dist');
+}
 
-for (let cheatsheet of cheatsheets) {
-  // create template driven markdownit instance
+/**
+ * create template driven markdownit instance
+ * @param cheatsheet name of the cheatsheet to build
+ */
+async function computeCheatsheet(cheatsheet: string): Promise<any> {
   const markdown = new MarkdownIt({}).use(highlightjs);
 
   console.log(`${cheatsheet} cheatsheet.`);
@@ -36,7 +46,7 @@ for (let cheatsheet of cheatsheets) {
   // render html body with markdownit
   const rendered = markdown.render(fs.readFileSync(`${cheatsheetDir}${cheatsheet}/index.md`).toString());
 
-  const context = {
+  const context: any = {
     title: config.name,
     mainColor: config.mainColor,
     secondaryColor: config.secondaryColor,
@@ -47,7 +57,7 @@ for (let cheatsheet of cheatsheets) {
   console.log(`Create ${config.template} HTML page.`);
   // create cheatsheet package with html page and assets
   fs.mkdirSync(`${outDir}${cheatsheet}`);
-  const html = ejs.render(fs.readFileSync(`${templatesDir}${config.template}/index.ejs`).toString(), context);
+  const html: string = ejs.render(fs.readFileSync(`${templatesDir}${config.template}/index.ejs`).toString(), context);
   fs.writeFileSync(`${outDir}${cheatsheet}/cheatsheet.html`, html);
   fs.cpSync(`${templatesDir}${config.template}/style.css`, `${outDir}${cheatsheet}/style.css`);
   if (fs.existsSync(`${cheatsheetDir}${cheatsheet}/assets`)) {
@@ -56,4 +66,27 @@ for (let cheatsheet of cheatsheets) {
 
   // copy common files
   fs.cpSync(`${templatesDir}/common.css`, `${outDir}/common.css`);
+  return context;
 }
+
+function buildIndex(cheatsheetsContext: any[]): void {
+  const context: any = {
+    cheatsheetsContext
+  };
+  console.log('Build index file');
+  const html: string = ejs.render(fs.readFileSync(`${templatesDir}/main/index.ejs`).toString(), context);
+  fs.writeFileSync(`${outDir}/index.html`, html);
+  fs.readdirSync(`${templatesDir}/main/`)
+    .forEach((dirent: string) => fs.cpSync(`${templatesDir}/main/${dirent}`, `${outDir}/${dirent}`));
+}
+
+// main code
+clearDist();
+
+const cheatsheetsContext: any[] = [];
+const cheatsheets: string[] = getCheatsheetsList();
+for (let cheatsheet of cheatsheets) {
+  cheatsheetsContext.push(await computeCheatsheet(cheatsheet));
+}
+
+buildIndex(cheatsheetsContext);
