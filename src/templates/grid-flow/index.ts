@@ -13,7 +13,7 @@ function initializeTemplate(mit: MarkdownIt) {
       if (tokens[id].nesting === 1) {
         const row = tokens[id].info.split(' ')[2];
         if (row) {
-          return `<div class="row-${row}">`;
+          return `<div class="row" style="--row:${row}">`;
         } else {
           return `<div class="row">`;
         }
@@ -24,11 +24,10 @@ function initializeTemplate(mit: MarkdownIt) {
   })
     .use(MarkdownItContainer, 'column', {
       render: (tokens: any, id: number) => {
-
         if (tokens[id].nesting === 1) {
           const col = tokens[id].info.split(' ')[2];
           if (col) {
-            return `<div class="col-${col}">`;
+            return `<div class="col" style="--col:${col}">`;
           } else {
             return `<div class="col">`;
           }

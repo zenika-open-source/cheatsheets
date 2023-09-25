@@ -50,5 +50,10 @@ for (let cheatsheet of cheatsheets) {
   const html = ejs.render(fs.readFileSync(`${templatesDir}${config.template}/index.ejs`).toString(), context);
   fs.writeFileSync(`${outDir}${cheatsheet}/cheatsheet.html`, html);
   fs.cpSync(`${templatesDir}${config.template}/style.css`, `${outDir}${cheatsheet}/style.css`);
-  fs.cpSync(`${cheatsheetDir}${cheatsheet}/assets`, `${outDir}${cheatsheet}/assets`, { recursive: true });
+  if (fs.existsSync(`${cheatsheetDir}${cheatsheet}/assets`)) {
+    fs.cpSync(`${cheatsheetDir}${cheatsheet}/assets`, `${outDir}${cheatsheet}/assets`, { recursive: true });
+  }
+
+  // copy common files
+  fs.cpSync(`${templatesDir}/common.css`, `${outDir}/common.css`);
 }

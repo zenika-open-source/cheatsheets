@@ -1,0 +1,7 @@
+:root {
+    --global-font-size: 14px;
+
+    & body, & td {
+        font-size: var(--global-font-size);
+    }
+}
