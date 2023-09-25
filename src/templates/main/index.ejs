@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&amp;display=swap" />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <header>
+            <img src="logo_dark.svg" />
+        </header>
+        <main>
+            <h1>Awesome cheatsheets !</h1>
+            <div class="cards">
+            <% for(var i = 0; i < cheatsheetsContext.length; i++) { %>
+                <a class="card" href="/<%= cheatsheetsContext[i].title %>/cheatsheet.html">
+                    <img src="<%= cheatsheetsContext[i].title %>/<%= cheatsheetsContext[i].icon %>" />
+                    <label><%= cheatsheetsContext[i].title %></label>
+                </a>
+            <% } %>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

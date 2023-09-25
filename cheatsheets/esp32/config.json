@@ -1,0 +1,7 @@
+{
+  "template": "grid-flow",
+  "mainColor": "#ef3e42",
+  "secondaryColor": "#a13c3e",
+  "name": "ESP32",
+  "icon": "assets/logo.png"
+}
