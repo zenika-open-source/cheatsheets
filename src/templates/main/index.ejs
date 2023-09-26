@@ -1,25 +1,33 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&amp;display=swap" />
-        <link rel="stylesheet" href="./style.css" />
-    </head>
-    <body>
-        <header>
-            <img src="logo_dark.svg" />
-        </header>
-        <main>
-            <h1>Awesome cheatsheets !</h1>
-            <div class="cards">
-            <% for(var i = 0; i < cheatsheetsContext.length; i++) { %>
-                <a class="card" href="/<%= cheatsheetsContext[i].title %>/cheatsheet.html">
-                    <img src="<%= cheatsheetsContext[i].title %>/<%= cheatsheetsContext[i].icon %>" />
-                    <label><%= cheatsheetsContext[i].title %></label>
-                </a>
-            <% } %>
-            </div>
-        </main>
-        <footer>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&amp;display=swap" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="logo_dark.svg" />
+      <ul class="menu">
+        <li><a href="/">HOME</a></li>
+        <li><a href="#">BUILDER</a></li>
+      </ul>
+    </header>
+    <main>
+      <h1>Awesome cheatsheets !</h1>
+      <div class="cards">
+      <% for(var i = 0; i < cheatsheetsContext.length; i++) { %>
+        <a class="card" href="/<%= cheatsheetsContext[i].title %>/cheatsheet.html">
+          <div class="circle">
+            <img src="<%= cheatsheetsContext[i].title %>/<%= cheatsheetsContext[i].icon %>" />
+          </div>
+          <label><%= cheatsheetsContext[i].title %></label>
+          <p><%= cheatsheetsContext[i].description %></p>
+        </a>
+      <% } %>
+      </div>
+    </main>
+    <footer>
 
-        </footer>
-    </body>
+    </footer>
+  </body>
 </html>
