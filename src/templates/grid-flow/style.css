@@ -57,7 +57,7 @@ body {
 
         & main {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(calc(25% - 20px), 1fr));
             gap: 20px;
             padding: 20px;
 
@@ -102,10 +102,14 @@ body {
         & footer {
             display: flex;
             justify-content: flex-end;
+            align-items: center;
             height: 80px;
             background-color: var(--main-color);
             border-bottom: 10px solid  var(--secondary-color);
-            padding-right: 20px;
+            padding: 0 32px;
+            & img {
+                height: 48px;
+            }
         }
     }
 }

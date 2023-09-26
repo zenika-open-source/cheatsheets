@@ -48,6 +48,7 @@ async function computeCheatsheet(cheatsheet: string): Promise<any> {
 
   const context: any = {
     title: config.name,
+    description: config.description,
     mainColor: config.mainColor,
     secondaryColor: config.secondaryColor,
     content: rendered,
