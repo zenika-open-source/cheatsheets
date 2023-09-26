@@ -1,17 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&amp;display=swap" />
-    <link rel="stylesheet" href="./style.css" />
+    <%- include('/partials/head.ejs') %>
+    <title>Awesome cheatsheets</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <header>
-      <img src="logo_dark.svg" />
-      <ul class="menu">
-        <li><a href="/">HOME</a></li>
-        <li><a href="#">BUILDER</a></li>
-      </ul>
-    </header>
+    <%- include('/partials/header.ejs') %>
     <main>
       <h1>Awesome cheatsheets !</h1>
       <div class="cards">
@@ -26,8 +21,6 @@
       <% } %>
       </div>
     </main>
-    <footer>
-
-    </footer>
+    <%- include('/partials/footer.ejs') %>
   </body>
 </html>
