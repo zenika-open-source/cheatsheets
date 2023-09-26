@@ -1,0 +1,11 @@
+{
+  "template": "grid-flow",
+  "mainColor": "#5151c5",
+  "secondaryColor": "#3e3e98",
+  "name": "Template Grid Flow",
+  "description": "Basic template that use css grid to auto arrange section. With capacity to take one or more cell for each section.",
+  "icon": "assets/logo.png",
+  "templateParams": {
+    "colNumber": 3
+  }
+}
