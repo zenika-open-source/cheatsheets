@@ -35,6 +35,21 @@ function initializeTemplate(mit: MarkdownIt) {
           return '</div>';
         }
       }
+    })
+    .use(MarkdownItContainer, 'col-row', {
+      render: (tokens: any, id: number) => {
+        if (tokens[id].nesting === 1) {
+          const col = tokens[id].info.split(' ')[2];
+          const row = tokens[id].info.split(' ')[3];
+          if (col) {
+            return `<div class="col row" style="--col:${col};--row:${row}">`;
+          } else {
+            return `<div class="col row">`;
+          }
+        } else {
+          return '</div>';
+        }
+      }
     });
 }
 
