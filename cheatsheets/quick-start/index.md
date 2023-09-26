@@ -27,16 +27,18 @@ Config file `config.json` represent the metadatas of your cheatsheet.
   "secondaryColor": "#3e3e98",
   "name": "Template Column",
   "description": "The description that appear on the main page",
-  "icon": "assets/logo.png"
+  "icon": "assets/logo.png",
+  "templateParams": {...}
 }
 ```
-With :
+
  - **template**: template you want to use, see template list to choose one
  - **mainColor**: your main color, appear in header & footer
  - **secondaryColor**: your secondary color, appear in header & footer
  - **name**: name of the cheatsheet, use in header
  - **description**: a quick description of the content
  - **icon**: image around 80px x 80px use in header
+ - **templateParams**: template specific params, see template cheatsheet
 
 :::
 ::: column
