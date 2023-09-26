@@ -2,6 +2,7 @@ import ejs from 'ejs';
 import fs from 'fs';
 import MarkdownIt from 'markdown-it';
 import highlightjs from 'markdown-it-highlightjs';
+import { CheatsheetContext } from './cheatsheet-context.interface.ts';
 import { TemplateType } from './templates/template.type.ts';
 
 const templatesDir: string = './src/templates/';
@@ -47,7 +48,8 @@ export async function computeCheatsheet(cheatsheet: string): Promise<any> {
   // render html body with markdownit
   const rendered = markdown.render(fs.readFileSync(`${cheatsheetDir}${cheatsheet}/index.md`).toString());
 
-  const context: any = {
+  const context: CheatsheetContext = {
+    cheatsheet,
     title: config.name,
     description: config.description,
     mainColor: config.mainColor,

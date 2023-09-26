@@ -11,9 +11,9 @@
       <h1>Awesome cheatsheets !</h1>
       <div class="cards">
       <% for(var i = 0; i < cheatsheetsContext.length; i++) { %>
-        <a class="card" href="/<%= cheatsheetsContext[i].title %>/cheatsheet.html">
+        <a class="card" href="/<%= cheatsheetsContext[i].cheatsheet %>/cheatsheet.html">
           <div class="circle">
-            <img src="<%= cheatsheetsContext[i].title %>/<%= cheatsheetsContext[i].icon %>" />
+            <img src="<%= cheatsheetsContext[i].cheatsheet %>/<%= cheatsheetsContext[i].icon %>" />
           </div>
           <label><%= cheatsheetsContext[i].title %></label>
           <p><%= cheatsheetsContext[i].description %></p>
