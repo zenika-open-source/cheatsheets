@@ -1,9 +1,9 @@
+import MarkdownIt, { PluginSimple, PluginWithOptions } from 'markdown-it';
 import { render } from 'ejs';
 import type { Options } from 'ejs';
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync, StatsBase, StatsFs, Stats, statSync } from 'node:fs';
 import { globSync } from 'glob';
 import type { Dirent } from 'node:fs'
-import MarkdownIt from 'markdown-it';
 import highlightjs from 'markdown-it-highlightjs';
 import type { CheatsheetContext } from './cheatsheet-context.interface.ts';
 import type { TemplateType } from './templates/template.type.ts';
@@ -13,7 +13,7 @@ const templatesDir: string = './src/templates/';
 const cheatsheetDir: string = './cheatsheets/';
 const outDir: string = './dist/';
 const ejsDefaultConfig: Options & { async: false } = { root: `${templatesDir}`, async: false };
-
+const maxGeneratedCheatsheets: number = 10;
 
 /**
  * Get list of available cheatsheets
@@ -39,12 +39,39 @@ function cpGlobSync(glob: string, destination: string): void {
   });
 }
 
+export function cleanGenerated() {
+  const files: string[] = readdirSync(`${outDir}/`)
+    .filter((dirent: string) => dirent.startsWith('generated-'));
+  if (files.length > maxGeneratedCheatsheets) {
+    const sortedFiled: string[] = files.map((dirent: string) => [dirent, statSync(`${outDir}/${dirent}`)] as [string, Stats])
+      .sort((file1: [string, Stats], file2: [string, Stats]) => file1[1].birthtimeMs - file2[1].birthtimeMs)
+      .map((dirent: [string, Stats]) => dirent[0]);
+
+    while(sortedFiled.length > maxGeneratedCheatsheets) {
+      const file: string = sortedFiled.shift() as string;
+      rmSync(`${outDir}/${file}`, {recursive: true, force: true});
+    }
+  }
+}
+
+/**
+ * Create specific markdown html generator for the template
+ * @param template template name
+ */
+export async function createMarkdownEngine(template: string): Promise<MarkdownIt> {
+  const markdown = new MarkdownIt({}).use(highlightjs);
+  console.log(`Initialize ${template} template.`);
+  // get template specific scripts and run it
+  const templateScript: TemplateType = (await import(`.${templatesDir}${template}/index.ts`)).default;
+  templateScript.initializeTemplate(markdown);
+  return markdown;
+}
+
 /**
  * create template driven markdownit instance
  * @param cheatsheet name of the cheatsheet to build
  */
 export async function computeCheatsheet(cheatsheet: string): Promise<CheatsheetContext> {
-  const markdown = new MarkdownIt({}).use(highlightjs);
 
   console.log(`${cheatsheet} cheatsheet.`);
 
@@ -54,6 +81,8 @@ export async function computeCheatsheet(cheatsheet: string): Promise<CheatsheetC
   console.log(`Initialize ${config.template} template.`);
   // get template specific scripts and run it
   const templateConfiguration: TemplateType = (await import(`.${templatesDir}${config.template}/index.ts`)).default;
+  const markdown = await createMarkdownEngine(config.template);
+
   basicHeading(markdown);
   templateConfiguration.initializeTemplate(markdown);
 
@@ -73,21 +102,29 @@ export async function computeCheatsheet(cheatsheet: string): Promise<CheatsheetC
     templateParams: { ...templateConfiguration.defaultParams, ...config.templateParams }
   };
 
-  console.log(`Create ${config.template} HTML page.`);
-
   // create cheatsheet package with html page and assets
-  mkdirSync(`${outDir}${cheatsheet}`);
-  const html: string = render(readFileSync(`${templatesDir}${config.template}/index.ejs`, { encoding: 'utf-8' }), context, ejsDefaultConfig);
-  writeFileSync(`${outDir}${cheatsheet}/index.html`, html);
-  cpGlobSync(`${templatesDir}${config.template}/**/*.css`, `${outDir}${cheatsheet}/`);
+  generateCheatsheet(config.template, cheatsheet, context);
+  return context;
+}
 
-  if (existsSync(`${cheatsheetDir}${cheatsheet}/assets`)) {
-    cpSync(`${cheatsheetDir}${cheatsheet}/assets`, `${outDir}${cheatsheet}/assets`, { recursive: true });
+/**
+ * Generate cheatsheet files
+ * @param template template name
+ * @param cheatsheetOutDir name of the output folder
+ * @param context cheatsheet context @see CheatsheetContext object
+ */
+export function generateCheatsheet(template: string, cheatsheetOutDir: string, context: CheatsheetContext) {
+  console.log(`Create ${context.title} HTML page.`);
+  mkdirSync(`${outDir}${cheatsheetOutDir}`);
+  const html: string = render(readFileSync(`${templatesDir}${template}/index.ejs`, { encoding: 'utf-8' }), context, ejsDefaultConfig);
+  writeFileSync(`${outDir}${cheatsheetOutDir}/index.html`, html);
+  cpGlobSync(`${templatesDir}${template}/**/*.css`, `${outDir}${cheatsheetOutDir}/`);
+  if (existsSync(`${cheatsheetDir}${context.cheatsheet}/assets`)) {
+    cpSync(`${cheatsheetDir}${context.cheatsheet}/assets`, `${outDir}${cheatsheetOutDir}/assets`, { recursive: true });
   }
 
   // copy common files
   cpSync(`${templatesDir}/template-common.css`, `${outDir}/template-common.css`);
-  return context;
 }
 
 export type CategorizedCheatsheets = {
@@ -95,11 +132,16 @@ export type CategorizedCheatsheets = {
 }
 
 export function buildIndex(cheatsheetsCategories: CategorizedCheatsheets): void {
+  const templates = readdirSync(templatesDir, {withFileTypes: true})
+    .filter((dirent: any) => dirent.isDirectory())
+    .filter((dir: any) => !['main', 'partials'].includes(dir.name))
+    .map((dir: any) => dir.name);
   const categories = JSON.parse(readFileSync(`${cheatsheetDir}categories.json`, { encoding: 'utf-8' }));
 
   const context = {
     cheatsheetsCategories,
-    categories
+    categories,
+    templates
   };
   console.log('Build index file');
 

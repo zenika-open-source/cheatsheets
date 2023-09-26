@@ -1,0 +1,26 @@
+main {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--header-size) - 128px);
+  padding-top: 64px;
+  padding-bottom: 64px;
+  gap: 24px;
+
+  .options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+
+  #editor {
+    width: 100%;
+    flex: 1;
+  }
+
+  .action {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}

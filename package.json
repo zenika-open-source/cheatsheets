@@ -8,7 +8,8 @@
     "build": "ts-node src/index.ts",
     "start:dev": "concurrently --kill-others \"npm run start:http\" \"npm run start:nodemon\"",
     "start:http": "http-server -c-1 dist",
-    "start:nodemon": "nodemon --watch src --watch cheatsheets --ext ts,json,md,css,ejs,html -I --exec node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts"
+    "start:nodemon": "nodemon --watch src --watch cheatsheets --ext ts,json,md,css,ejs,html -I --exec node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
+    "start:generator": "ts-node src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,13 +17,21 @@
   "dependencies": {
     "ejs": "^3.1.9",
     "glob": "^10.3.10",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
     "markdown-it": "^13.0.1",
     "markdown-it-container": "^3.0.0",
     "markdown-it-highlightjs": "^4.0.1"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.3",
+    "@types/cors": "^2.8.14",
     "@types/glob": "^8.1.0",
     "@types/ejs": "^3.1.2",
+    "@types/express": "^4.17.18",
     "@types/markdown-it": "^12.2.3",
     "@types/markdown-it-container": "^2.0.5",
     "@types/markdown-it-highlightjs": "^3.3.1",

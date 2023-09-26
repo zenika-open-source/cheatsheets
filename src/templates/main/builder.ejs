@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('/partials/head.ejs') %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
+    <title>Awesome cheatsheets - builder</title>
+    <link rel="stylesheet" href="builder.css" />
+  </head>
+  <body>
+    <%- include('/partials/header.ejs') %>
+    <main>
+      <h1>Cheatsheet builder</h1>
+      <div class="options">
+        <div>
+          <label>Title</label>
+          <input type="text" id="title" placeholder="Title"/>
+        </div>
+        <div>
+          <label>Template</label>
+          <select id="template">
+            <% for(var i = 0; i < templates.length; i++) { %>
+              <option value="<%= templates[i] %>"><%= templates[i] %></option>
+            <% } %>
+          </select>
+        </div>
+        <div>
+          <label>Main color</label>
+          <input type="color" value="#d01f55" id="mainColor" />
+        </div>
+        <div>
+          <label>Secondary color</label>
+          <input type="color" value="#dd2049" id="secondaryColor" />
+        </div>
+      </div>
+      <div id="editor"></div>
+      <div class="action">
+        <button type="button" onclick="generate()">Generate</button>
+      </div>
+    </main>
+    <%- include('/partials/footer.ejs') %>
+    <script>
+      const editor = ace.edit("editor");
+      editor.getSession().setMode("ace/mode/markdown");
+      editor.setValue(`::: column
+# Structure
+
+\`\`\`cpp
+      // Initialization function
+      void setup() {}
+
+      // Run function
+      void loop() {}
+      \`\`\`
+
+# Digital IO
+
+\`\`\`cpp
+      pinMode(pin, [INPUT, OUTPUT, INPUT_PULLDOWN, INPUT_PULLUP]);
+      int digitalRead(pin);
+      digitalWrite(pin, value);
+      \`\`\`
+
+\`value\` can be \`HIGH\` or \`LOW\`
+
+# Analog IO
+
+\`\`\`cpp
+      // return value between 0 - 4095
+      int analogRead(pin);
+
+      // fake analog => PWM; 0 - 255
+      analogWrite(pin, value);
+      \`\`\`
+
+# Advanced IO
+
+\`\`\`cpp
+      // generate square wave at freq
+      tone(pin, freq, duration_ms?);
+      // stop generating wave
+      noTone(pin);
+
+      // shift each bit of value to dataPin at clkPin speed
+      // if value = 22 (0010110) and bitOrder MSBFIRST then
+      // dataPin will take value 0, 0, 1, 0, 1, 1, 0 at rhythm
+      // of clkPin
+      shiftOut(dataPin, clkPin, [MSBFIRST, LSBFIRST], value);
+      \`\`\`
+
+# Time
+\`\`\`cpp
+      unsingned long millis(); // overflow: 50days
+      unsigned long micros(); // overflow 70min
+      delay(ms);
+      vTaskDelay(ms); // use if multi-threading
+      delayMicroseconds(us)
+              \`\`\`
+
+
+:::`);
+
+      async function generate() {
+        const form = [];
+        form.push(`${encodeURIComponent('template')}=${encodeURIComponent(document.getElementById('template').value)}`);
+        form.push(`${encodeURIComponent('title')}=${encodeURIComponent(document.getElementById('title').value)}`);
+        form.push(`${encodeURIComponent('mainColor')}=${encodeURIComponent(document.getElementById('mainColor').value)}`);
+        form.push(`${encodeURIComponent('secondaryColor')}=${encodeURIComponent(document.getElementById('secondaryColor').value)}`);
+        form.push(`${encodeURIComponent('markdown')}=${encodeURIComponent(editor.getValue())}`);
+        formBody = form.join('&');
+        const response = await(await fetch('http://127.0.0.1:3000/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+          },
+          body: formBody
+        })).json();
+        window.open(response.uri, '_blank');
+      }
+    </script>
+  </body>
+</html>
