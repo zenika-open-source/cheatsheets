@@ -140,7 +140,7 @@ For now, to test you have to start cheatsheet engine locally on your computer. Y
 
 This last command will start a webserver and refresh it at every changes on your files.
 
-You can now access your local instance of cheatsheets at [http://localhost/](http://localhost/).
+You can now access your local instance of cheatsheets at [http://localhost:8080/](http://localhost:8080/).
 
 # Deploy
 
