@@ -1,14 +1,15 @@
 <html>
     <head>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
-    <style>
-        :root {
-            --main-color: <%= mainColor %>;
-            --secondary-color: <%= secondaryColor %>;
-        }
-    </style>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
+        <style>
+            :root {
+              --main-color: <%= mainColor %>;
+              --secondary-color: <%= secondaryColor %>;
+              --column-number: <%= templateParams.colNumber %>;
+            }
+        </style>
     <link href="style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>

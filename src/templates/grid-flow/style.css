@@ -57,9 +57,9 @@ body {
 
         & main {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(calc(25% - 20px), 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(calc((1 / var(--column-number) * 100%) - 20px), 1fr));
             gap: 20px;
-            padding: 20px;
+            padding: 30px 20px;
 
             & > div {
                 display: flex;

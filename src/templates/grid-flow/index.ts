@@ -39,5 +39,8 @@ function initializeTemplate(mit: MarkdownIt) {
 }
 
 export default {
-  initializeTemplate
+  initializeTemplate,
+  defaultParams: {
+    colNumber: 4
+  }
 } as TemplateType;
