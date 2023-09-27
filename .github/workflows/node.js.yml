@@ -36,7 +36,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run start
+    - run: npm run build -- --baseHref /cheatsheets/
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v2
       with:

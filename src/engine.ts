@@ -1,6 +1,6 @@
 import ejs from 'ejs';
 import fs from 'fs';
-import MarkdownIt from 'markdown-it';
+import MarkdownIt, { PluginSimple, PluginWithOptions } from 'markdown-it';
 import highlightjs from 'markdown-it-highlightjs';
 import { CheatsheetContext } from './cheatsheet-context.interface.ts';
 import { TemplateType } from './templates/template.type.ts';
