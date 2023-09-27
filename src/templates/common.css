@@ -1,7 +1,37 @@
 :root {
-    --global-font-size: 14px;
+  --global-font-size: 14px;
 
-    & body, & td {
-        font-size: var(--global-font-size);
+  & body, & td {
+    font-size: var(--global-font-size);
+  }
+
+  & table {
+    width: fit-content;
+
+    & td, & th {
+      padding: 0 10px;
     }
+  }
+
+  & hr {
+    width: calc(100% - 40px);
+    margin: 30px 20px;
+    border-top: 1px solid darkgray;
+
+  }
+
+  & h3 {
+    padding-left: 12px;
+  }
+
+  & h4 {
+    padding-left: 24px;
+    font-weight: 600;
+  }
+
+  & code {
+    padding: 0 5px;
+    border-radius: 2px;
+    background-color: #f3f3f3;
+  }
 }

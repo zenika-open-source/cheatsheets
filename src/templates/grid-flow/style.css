@@ -57,9 +57,9 @@ body {
 
         & main {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(calc(25% - 20px), 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(calc((1 / var(--column-number) * 100%) - 20px), 1fr));
             gap: 20px;
-            padding: 20px;
+            padding: 30px 20px;
 
             & > div {
                 display: flex;
@@ -88,6 +88,14 @@ body {
             & div:nth-child(5) h2 { color: #f5a286; }
             & div:nth-child(6) h2 { color: #de6f4a; }
             & div:nth-child(7) h2 { color: #e03c05; }
+
+            & h3 {
+                color: #4a636e;
+            }
+
+            & h4 {
+                color: #66838f;
+            }
 
             & .row {
                 --row: 1;

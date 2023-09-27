@@ -6,4 +6,5 @@ export interface CheatsheetContext {
   secondaryColor: string;
   content: string;
   icon: string;
+  templateParams: any;
 }

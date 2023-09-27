@@ -41,8 +41,8 @@ export async function computeCheatsheet(cheatsheet: string): Promise<any> {
 
   console.log(`Initialize ${config.template} template.`);
   // get template specific scripts and run it
-  const templateScript: TemplateType = (await import(`.${templatesDir}${config.template}/index.ts`)).default;
-  templateScript.initializeTemplate(markdown);
+  const templateConfiguration: TemplateType = (await import(`.${templatesDir}${config.template}/index.ts`)).default;
+  templateConfiguration.initializeTemplate(markdown);
 
   console.log(`Render ${config.template} template.`);
   // render html body with markdownit
@@ -55,7 +55,8 @@ export async function computeCheatsheet(cheatsheet: string): Promise<any> {
     mainColor: config.mainColor,
     secondaryColor: config.secondaryColor,
     content: rendered,
-    icon: config.icon
+    icon: config.icon,
+    templateParams: { ...templateConfiguration.defaultParams, ...config.templateParams }
   };
 
   console.log(`Create ${config.template} HTML page.`);
