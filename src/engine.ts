@@ -63,7 +63,7 @@ export async function computeCheatsheet(cheatsheet: string): Promise<any> {
   // create cheatsheet package with html page and assets
   fs.mkdirSync(`${outDir}${cheatsheet}`);
   const html: string = ejs.render(fs.readFileSync(`${templatesDir}${config.template}/index.ejs`).toString(), context, ejsDefaultConfig);
-  fs.writeFileSync(`${outDir}${cheatsheet}/cheatsheet.html`, html);
+  fs.writeFileSync(`${outDir}${cheatsheet}/index.html`, html);
   fs.cpSync(`${templatesDir}${config.template}/style.css`, `${outDir}${cheatsheet}/style.css`);
   if (fs.existsSync(`${cheatsheetDir}${cheatsheet}/assets`)) {
     fs.cpSync(`${cheatsheetDir}${cheatsheet}/assets`, `${outDir}${cheatsheet}/assets`, { recursive: true });
