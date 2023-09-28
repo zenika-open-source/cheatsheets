@@ -5,10 +5,20 @@
   "imageSize": 100,
   "contributorsPerLine": 7,
   "contributorsSortAlphabetically": false,
-  "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square)](#contributors)",
   "contributorTemplate": "<a href=\"<%= contributor.profile %>\"><img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"\"/><br /><sub><b><%= contributor.name %></b></sub></a>",
   "skipCi": true,
   "contributors": [
+    {
+      "login": "Liollury",
+      "name": "Liollury",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16292348?v=4",
+      "profile": "https://github.com/Liollury",
+      "contributions": [
+        "projectManagement",
+        "code",
+        "promotion"
+      ]
+    },
     {
       "login": "awattez",
       "name": "Adrien Wattez",
@@ -19,12 +29,12 @@
       ]
     },
     {
-      "login": "LiolluryZ",
-      "name": "LiolluryZ",
-      "avatar_url": "https://avatars.githubusercontent.com/u/107108262?v=4",
-      "profile": "https://github.com/LiolluryZ",
+      "login": "nkCreation",
+      "name": "Nicolas L.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4450152?v=4",
+      "profile": "http://nkcreation.com",
       "contributions": [
-        "projectManagement"
+        "promotion"
       ]
     }
   ],

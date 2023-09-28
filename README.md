@@ -1,6 +1,4 @@
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 
 # Cheatsheets
 
@@ -25,8 +23,9 @@ The main objectives are :
 <table>
   <tbody>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Liollury"><img src="https://avatars.githubusercontent.com/u/16292348?v=4" width="100px;" alt=""/><br /><sub><b>Liollury</b></sub></a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/awattez"><img src="https://avatars.githubusercontent.com/u/3267806?v=4" width="100px;" alt=""/><br /><sub><b>Adrien Wattez</b></sub></a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/LiolluryZ"><img src="https://avatars.githubusercontent.com/u/107108262?v=4" width="100px;" alt=""/><br /><sub><b>LiolluryZ</b></sub></a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://nkcreation.com"><img src="https://avatars.githubusercontent.com/u/4450152?v=4" width="100px;" alt=""/><br /><sub><b>Nicolas L.</b></sub></a></td>
     </tr>
   </tbody>
 </table>
@@ -36,4 +35,5 @@ The main objectives are :
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-![with love by zenika](https://img.shields.io/badge/With%20%E2%9D%A4%EF%B8%8F%20by-Zenika-b51432.svg?link=https://oss.zenika.com)
+[![All Contributors](https://img.shields.io/github/all-contributors/zenika-open-source/cheatsheets?color=ee8449&style=round-square)](#contributors)
+&nbsp;![with love by zenika](https://img.shields.io/badge/With%20%E2%9D%A4%EF%B8%8F%20by-Zenika-b51432.svg?link=https://oss.zenika.com)
