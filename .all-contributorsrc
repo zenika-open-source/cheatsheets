@@ -10,6 +10,15 @@
   "skipCi": true,
   "contributors": [
     {
+      "login": "awattez",
+      "name": "Adrien Wattez",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3267806?v=4",
+      "profile": "https://github.com/awattez",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "LiolluryZ",
       "name": "LiolluryZ",
       "avatar_url": "https://avatars.githubusercontent.com/u/107108262?v=4",
