@@ -26,6 +26,15 @@
       "contributions": [
         "projectManagement"
       ]
+    },
+    {
+      "login": "nkCreation",
+      "name": "Nicolas L.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4450152?v=4",
+      "profile": "http://nkcreation.com",
+      "contributions": [
+        "promotion"
+      ]
     }
   ],
   "projectName": "cheatsheets",
