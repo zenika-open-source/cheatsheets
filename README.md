@@ -1,5 +1,7 @@
-# Cheatsheets
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
+# Cheatsheets
 
 🤩 A collaborative list of awesome cheatsheets. Feel free to contribute.
 
@@ -13,3 +15,16 @@ The main objectives are :
  - Allow to export it as a simple recto-verso PDF
 
 ![workflow](https://github.com/zenika-open-source/cheatsheets/blob/main/workflow.png?raw=true)
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+</table>
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+![with love by zenika](https://img.shields.io/badge/With%20%E2%9D%A4%EF%B8%8F%20by-Zenika-b51432.svg?link=https://oss.zenika.com)
