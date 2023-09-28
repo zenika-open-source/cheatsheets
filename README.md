@@ -25,6 +25,7 @@ The main objectives are :
 <table>
   <tbody>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/awattez"><img src="https://avatars.githubusercontent.com/u/3267806?v=4" width="100px;" alt=""/><br /><sub><b>Adrien Wattez</b></sub></a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/LiolluryZ"><img src="https://avatars.githubusercontent.com/u/107108262?v=4" width="100px;" alt=""/><br /><sub><b>LiolluryZ</b></sub></a></td>
     </tr>
   </tbody>
