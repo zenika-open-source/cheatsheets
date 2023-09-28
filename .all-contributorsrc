@@ -8,9 +8,21 @@
   "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square)](#contributors)",
   "contributorTemplate": "<a href=\"<%= contributor.profile %>\"><img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"\"/><br /><sub><b><%= contributor.name %></b></sub></a>",
   "skipCi": true,
-  "contributors": [],
-  "projectName": "Cheatsheets",
-  "projectOwner": "Zenika",
+  "contributors": [
+    {
+      "login": "LiolluryZ",
+      "name": "LiolluryZ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/107108262?v=4",
+      "profile": "https://github.com/LiolluryZ",
+      "contributions": [
+        "projectManagement"
+      ]
+    }
+  ],
+  "projectName": "cheatsheets",
+  "projectOwner": "zenika-open-source",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "commitType": "docs",
+  "commitConvention": "angular"
 }
