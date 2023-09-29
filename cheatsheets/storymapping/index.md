@@ -21,6 +21,7 @@ Be inclusive, invite stakeholders, sponsors, and the whole dev team
 
 # Pitfalls
 
+what not to do :)
 
 :::
 ::: column
