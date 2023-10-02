@@ -142,3 +142,99 @@ void myThread(void* parameter) {
 }
 ```
 :::
+
+:::column
+
+# WIFI
+
+Connect to wifi AP
+
+```cpp
+#include <WiFi.h>
+#define SSID zenika
+#define PWD zenika
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(SSID, PWD);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+  }
+  Serial.print("Connected. IP: ");
+  Serial.println(WiFi.localIP());
+}
+
+```
+
+# HTTP
+
+HTTP Client request with `HTTPClient` lib
+```cpp
+#include <HTTPClient.h>
+String serverUrl = "http://192.168.0.88:3000/ping";
+
+void setup() {
+  // WiFi connection [...]
+}
+
+void loop() {
+  if(myConditionToSendRequest) {
+    HTTPClient http;
+    String serverPath = serverUrl + "?name=Zenika";
+    http.begin(serverPath);
+    int httpResponseCode = http.GET();
+    if (httpResponseCode > 0) {
+      Serial.print("HTTP Response code: ");
+      Serial.println(httpResponseCode);
+      String response = http.getString();
+      Serial.println(response);
+    } else {
+      Serial.print("Error code: ");
+      Serial.println(httpResponseCode);
+    }
+    // Free resources
+    http.end();
+  }
+}
+
+```
+
+:::
+
+::: column
+
+# Web server
+
+```cpp
+
+#include <WebServer.h>
+
+WebServer server(3000);
+
+void handlePingRequest() {
+  server.send(200, "text/html", "OK");
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_BUILTIN, LOW);
+}
+
+void setup() {
+  // WiFi connection [...]
+  server.on("/ping", handlePingRequest);
+  server.begin();
+}
+
+void loop() {
+  server.handleClient();
+}
+
+
+```
+
+
+Note that `server.handleClient();` is mandatory to tell the lib to check network stack request buffer.
+
+Otherwise, request from clients will not be accept.
+
+The longer the delay between `handleClient` the longer the request connection will take.
+:::
