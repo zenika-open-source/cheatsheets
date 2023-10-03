@@ -4,9 +4,10 @@
 
 🤩 A collaborative list of awesome cheatsheets. Feel free to contribute.
 
+# Objective 
+
 This project intend to allow everyone to create cheatsheet without programming skills.
 The main objectives are :
-
  - Build a **easy-to-use** and **easy-to-maintain** engine to generate cheatsheets
  - Use the well known **markdown** format to create it
  - Offer a way to create and use different **templates** to render document
@@ -14,6 +15,21 @@ The main objectives are :
  - Allow to export it as a simple recto-verso PDF
 
 ![workflow](https://github.com/zenika-open-source/cheatsheets/blob/main/workflow.png?raw=true)
+
+## Live demo
+You can explore a live demo of this project [here](https://zenika-open-source.github.io/cheatsheets/)
+
+## Quick Start
+To create your very first cheatsheets, follow this [Quick Start Guide](https://zenika-open-source.github.io/cheatsheets/quick-start/) 
+
+## Template Confiugration
+Cheatsheets are generated from Markdown files located in the `cheatsheets` folder. To configure the template and styles used in generating the Markdown, please refer to the `config.json` file. To understand how it works and how you can configure it, please follow the [Template Grid Flow](https://zenika-open-source.github.io/cheatsheets/template-grid-flow/).
+
+## Contributing
+If you'd like to contribute to this project, please follow our [contribution guidelines](CONTRIBUTING.md).
+
+## License
+This project is open-source and available under the [Apache License](LICENSE).
 
 ## Contributors
 
