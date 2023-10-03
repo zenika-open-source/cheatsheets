@@ -1,11 +1,9 @@
 import MarkdownIt from 'markdown-it';
 import MarkdownItContainer from 'markdown-it-container';
-import { basicHeading } from '../common';
 import { TemplateType } from '../template.type';
 
 
 function initializeTemplate(mit: MarkdownIt) {
-  basicHeading(mit);
 
   mit.use(MarkdownItContainer, 'row', {
     render: (tokens: any, id: number) => {

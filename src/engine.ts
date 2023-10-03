@@ -1,8 +1,9 @@
 import ejs from 'ejs';
 import fs from 'fs';
-import MarkdownIt, { PluginSimple, PluginWithOptions } from 'markdown-it';
+import MarkdownIt from 'markdown-it';
 import highlightjs from 'markdown-it-highlightjs';
 import { CheatsheetContext } from './cheatsheet-context.interface.ts';
+import { basicHeading } from './heading.rules.ts';
 import { TemplateType } from './templates/template.type.ts';
 
 const templatesDir: string = './src/templates/';
@@ -42,6 +43,7 @@ export async function computeCheatsheet(cheatsheet: string): Promise<any> {
   console.log(`Initialize ${config.template} template.`);
   // get template specific scripts and run it
   const templateConfiguration: TemplateType = (await import(`.${templatesDir}${config.template}/index.ts`)).default;
+  basicHeading(markdown);
   templateConfiguration.initializeTemplate(markdown);
 
   console.log(`Render ${config.template} template.`);
@@ -70,7 +72,7 @@ export async function computeCheatsheet(cheatsheet: string): Promise<any> {
   }
 
   // copy common files
-  fs.cpSync(`${templatesDir}/common.css`, `${outDir}/common.css`);
+  fs.cpSync(`${templatesDir}/template-common.css`, `${outDir}/template-common.css`);
   return context;
 }
 
