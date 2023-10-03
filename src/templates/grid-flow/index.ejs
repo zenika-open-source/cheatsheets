@@ -1,8 +1,7 @@
 <html>
     <head>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css" />
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
+        <%- include('/partials/head.ejs') %>
+        <%- include('/partials/template-hljs.ejs') %>
         <style>
             :root {
               --main-color: <%= mainColor %>;
@@ -10,29 +9,14 @@
               --column-number: <%= templateParams.colNumber %>;
             }
         </style>
-    <link href="style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div class="container">
-            <header class="header">
-                <h1><%= title %></h1>
-                <img src="<%= icon %>"/>
-                <svg class="background" preserveAspectRatio="none" viewBox="0 0 198.29855 30.210863" version="1.1" id="svg5" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-                    <defs id="defs2" />
-                    <g id="layer1" transform="translate(-0.17913148,-0.19217336)">
-                        <path class="secondaryColor" style="fill-opacity:1;stroke:none;stroke-width:0.269028" d="M 0.34289469,4.4298358 198.11942,4.4012843 100.74347,30.403036 Z" id="path339-8"/>
-                        <path class="mainColor" style="fill-opacity:1;stroke:none;stroke-width:0.264189" d="M 0.17913499,4.4149496 0.17913148,0.20535973 198.45181,0.19217336 198.47769,4.4149496 100.83304,24.007755 Z" id="path339" />
-                    </g>
-                </svg>
-
-            </header>
+            <%- include('/partials/template-header.ejs') %>
             <main>
                 <%- content %>
             </main>
-            <footer>
-                <img src="../logo_dark.svg" />
-            </footer>
+            <%- include('/partials/template-footer.ejs') %>
         </div>
     </body>
-    <script>hljs.highlightAll();</script>
 </html>
