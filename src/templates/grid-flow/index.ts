@@ -1,12 +1,13 @@
-import MarkdownIt from 'markdown-it';
+import type MarkdownIt from 'markdown-it';
 import MarkdownItContainer from 'markdown-it-container';
-import { TemplateType } from '../template.type';
+import type { TemplateType } from '../template.type';
+import type Token from 'markdown-it/lib/token';
 
 
-function initializeTemplate(mit: MarkdownIt) {
+function initializeTemplate(md: MarkdownIt) {
 
-  mit.use(MarkdownItContainer, 'row', {
-    render: (tokens: any, id: number) => {
+  md.use(MarkdownItContainer, 'row', {
+    render: (tokens: Token[], id: number) => {
 
       if (tokens[id].nesting === 1) {
         const row = tokens[id].info.split(' ')[2];
@@ -21,7 +22,7 @@ function initializeTemplate(mit: MarkdownIt) {
     }
   })
     .use(MarkdownItContainer, 'column', {
-      render: (tokens: any, id: number) => {
+      render: (tokens: Token[], id: number) => {
         if (tokens[id].nesting === 1) {
           const col = tokens[id].info.split(' ')[2];
           if (col) {
@@ -35,7 +36,7 @@ function initializeTemplate(mit: MarkdownIt) {
       }
     })
     .use(MarkdownItContainer, 'col-row', {
-      render: (tokens: any, id: number) => {
+      render: (tokens: Token[], id: number) => {
         if (tokens[id].nesting === 1) {
           const col = tokens[id].info.split(' ')[2];
           const row = tokens[id].info.split(' ')[3];
