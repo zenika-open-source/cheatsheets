@@ -22,7 +22,7 @@ You can explore a live demo of this project [here](https://zenika-open-source.gi
 ## Quick Start
 To create your very first cheatsheets, follow this [Quick Start Guide](https://zenika-open-source.github.io/cheatsheets/quick-start/) 
 
-## Template Confiugration
+## Template Configuration
 Cheatsheets are generated from Markdown files located in the `cheatsheets` folder. To configure the template and styles used in generating the Markdown, please refer to the `config.json` file. To understand how it works and how you can configure it, please follow the [Template Grid Flow](https://zenika-open-source.github.io/cheatsheets/template-grid-flow/).
 
 ## Contributing
