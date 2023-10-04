@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <%- include('/partials/head.ejs') %>
+        <%- include('/partials/template-hljs.ejs') %>
+        <style>
+            :root {
+              --main-color: <%= mainColor %>;
+              --secondary-color: <%= secondaryColor %>;
+              --card-gradient-color1: <%= templateParams.cardGradientColor1 %>;
+              --card-gradient-color2: <%= templateParams.cardGradientColor2 %>;
+              --recto-card-logo: url(<%= templateParams.rectoCardLogo %>);
+              --verso-card-logo: url(<%= templateParams.versoCardLogo %>);
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <%- include('/partials/template-header.ejs') %>
+            <main>
+                <%- content %>
+            </main>
+            <%- include('/partials/template-footer.ejs') %>
+        </div>
+    </body>
+</html>
