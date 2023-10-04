@@ -35,9 +35,9 @@ There are several ways you can contribute to this project:
 10. **Approval and Merge:** Once your pull request is approved, it will be merged into the main branch by a project maintainer.
 
 ## Architecture Understanding 
-To understand how cheetsheets are structured and how you can contribute to improve it, please check our [Quick Start Guide](https://zenika-open-source.github.io/cheatsheets/quick-start/) 
+To understand how cheatsheets are structured and how you can contribute to improve it, please check our [Quick Start Guide](https://zenika-open-source.github.io/cheatsheets/quick-start/) 
 
-## Template Confiugration
+## Template Configuration
 If you are creating a cheatsheet from scratch, you will need to configure your template. To understand how it works and how to configure it, please refer to the [Template Grid Flow](https://zenika-open-source.github.io/cheatsheets/template-grid-flow/).
 
 ## Questions and Help
