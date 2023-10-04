@@ -6,14 +6,16 @@ body {
 :root {
   --global-font-size: 14px;
 
-  & body, & td {
+  & body,
+  & td {
     font-size: var(--global-font-size);
   }
 
   & table {
     width: fit-content;
 
-    & td, & th {
+    & td,
+    & th {
       padding: 0 10px;
     }
   }
@@ -83,6 +85,20 @@ body {
       color: white;
       letter-spacing: 0.25em;
     }
+
+
+    & svg#back-btn {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      height: 3em;
+      cursor: pointer;
+      z-index: 999;
+
+      & path.mainColor {
+        fill: var(--main-color);
+      }
+    }
   }
 
   & footer {
@@ -91,8 +107,9 @@ body {
     align-items: center;
     height: 80px;
     background-color: var(--main-color);
-    border-bottom: 10px solid  var(--secondary-color);
+    border-bottom: 10px solid var(--secondary-color);
     padding: 0 32px;
+
     & img {
       height: 48px;
     }
