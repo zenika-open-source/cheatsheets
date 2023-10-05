@@ -45,6 +45,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "xcassel",
+      "name": "Xavier Cassel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/57092100?v=4",
+      "profile": "https://github.com/xcassel",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "projectName": "cheatsheets",
