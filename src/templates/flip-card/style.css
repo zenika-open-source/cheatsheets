@@ -48,7 +48,6 @@ body {
             & .recto {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
 
                 & .head {
                     position: relative;
@@ -56,6 +55,7 @@ body {
                     flex-direction: column;
                     width: calc(100% - 2 * var(--card-padding));
                     height: 30%;
+                    margin-bottom: 10px;
                     padding: var(--card-padding);
                     background: linear-gradient(45deg, var(--card-gradient-color1) 0%, var(--card-gradient-color2) 100%);
                     color: var(--card-head-color);
@@ -111,11 +111,6 @@ body {
 
 
                 & .card-logo-container {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    padding: 10px 0;
-                    width: 100%;
                     background-color: black;
 
                     & .card-logo {
@@ -126,10 +121,14 @@ body {
 
 
             & .card-logo-container {
+                position: absolute;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
-                width: calc(100% - 2 * var(--card-padding));
+                width: 100%;
+                bottom: 0;
+                left: 0;
+                padding: 10px 0;
 
                 & .card-logo {
                     width: 2vw;
@@ -147,7 +146,6 @@ body {
 
     }
 }
-
 
 
 

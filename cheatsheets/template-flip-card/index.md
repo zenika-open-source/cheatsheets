@@ -92,3 +92,31 @@ The back content
 ::::
 
 :::::
+
+
+:::::card
+
+::::recto
+:::head
+__Flip card__
+# Export cards
+> PDF / Print export is available on this template
+:::
+
+`Flip card` can be exported in PDF or print. Just use print function of your browser.
+
+&nbsp;
+
+This will generate A5 sized card (front and back side by side). So export it as A5 support of A4 portrait.
+
+
+::::
+
+::::verso
+__Flip card__
+# Nothing to see here !
+
+
+::::
+
+:::::
