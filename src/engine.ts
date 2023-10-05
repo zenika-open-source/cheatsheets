@@ -1,6 +1,7 @@
 import { render } from 'ejs';
 import type { Options } from 'ejs';
 import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { globSync } from 'glob';
 import type { Dirent } from 'node:fs'
 import MarkdownIt from 'markdown-it';
 import highlightjs from 'markdown-it-highlightjs';
@@ -29,6 +30,13 @@ export function getCheatsheetsList(): string[] {
 export function clearDist(): void {
   rmSync('./dist', { recursive: true, force: true });
   mkdirSync('./dist');
+}
+
+function cpGlobSync(glob: string, destination: string): void {
+  const files: string[] = globSync(glob, { dotRelative: true, absolute: false });
+  files.forEach((file: string) => {
+    cpSync(file, `${destination}/${file.replace(/^.*[\\\/]/, '')}`);
+  });
 }
 
 /**
@@ -70,7 +78,7 @@ export async function computeCheatsheet(cheatsheet: string): Promise<CheatsheetC
   mkdirSync(`${outDir}${cheatsheet}`);
   const html: string = render(readFileSync(`${templatesDir}${config.template}/index.ejs`, { encoding: 'utf-8' }), context, ejsDefaultConfig);
   writeFileSync(`${outDir}${cheatsheet}/index.html`, html);
-  cpSync(`${templatesDir}${config.template}/style.css`, `${outDir}${cheatsheet}/style.css`);
+  cpGlobSync(`${templatesDir}${config.template}/**/*.css`, `${outDir}${cheatsheet}/`);
 
   if (existsSync(`${cheatsheetDir}${cheatsheet}/assets`)) {
     cpSync(`${cheatsheetDir}${cheatsheet}/assets`, `${outDir}${cheatsheet}/assets`, { recursive: true });
