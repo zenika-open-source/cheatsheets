@@ -1,7 +1,7 @@
 {
   "template": "flip-card",
-  "mainColor": "#5151c5",
-  "secondaryColor": "#3e3e98",
+  "mainColor": "#ED7F10",
+  "secondaryColor": "#F2A557",
   "name": "Template Flip Card",
   "description": "Flip card template allowing you to create many card with recto/verso. CSS animation make it interactive and you can export it as pdf.",
   "icon": "assets/logo.png",

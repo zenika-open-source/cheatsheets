@@ -58,7 +58,7 @@ body {
                     height: 30%;
                     padding: var(--card-padding);
                     background: linear-gradient(45deg, var(--card-gradient-color1) 0%, var(--card-gradient-color2) 100%);
-                    color: white;
+                    color: var(--card-head-color);
                 }
 
 
