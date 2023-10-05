@@ -1,0 +1,64 @@
+@import url("../template-common.css");
+
+@page {
+    margin: 0;
+}
+
+body {
+    --total-width: 210mm;
+    --total-height: 148mm;
+
+    width: var(--total-width);
+    height: var(--total-height);
+    font-size: calc(var(--global-font-size) * 0.8) !important;
+
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+
+    & header, & footer {
+        display: none !important;
+    }
+
+    & .container {
+
+        & main {
+            margin: 0;
+            padding: 0;
+            gap: 0;
+        }
+
+        & .card {
+            width: 100%;
+            height: 100%;
+
+            & .inner-card {
+                display: flex;
+                flex-direction: row;
+                box-shadow: initial;
+            }
+
+            & .recto, & .verso {
+                position: initial;
+                display: block;
+            }
+
+            & .recto {
+                width: calc(var(--total-width) / 2);
+                height: var(--total-height);
+                padding: 0;
+            }
+
+            & .verso {
+                width: calc(var(--total-width) / 2 - 4mm);
+                height: calc(var(--total-height) - 4mm);
+                padding: 2mm;
+                transform: rotateY(0deg);
+            }
+
+            & .card-logo-container {
+                width: calc(var(--total-width) / 2);
+            }
+        }
+    }
+}
+
