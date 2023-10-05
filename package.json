@@ -14,7 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/glob": "^8.1.0",
     "ejs": "^3.1.9",
+    "glob": "^10.3.10",
     "markdown-it": "^13.0.1",
     "markdown-it-container": "^3.0.0",
     "markdown-it-highlightjs": "^4.0.1"
