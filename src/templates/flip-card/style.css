@@ -7,6 +7,18 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    @media (max-width: 700px) {
+        --global-font-size: 2vw;
+    }
+
+    @media (min-width: 700px) {
+        --global-font-size: 1vw;
+    }
+
+    @media (min-width: 1200px) {
+        --global-font-size: min(0.6vw, 14px);
+    }
+
     & .container {
         --card-padding: 20px;
         position: relative;
@@ -24,8 +36,20 @@ body {
         }
 
         & .card {
-            width: calc(30vw);
-            height: calc(30vw * 1.33);
+
+            @media (max-width: 700px) {
+                width: 90vw;
+                height: calc(90vw * 1.33);
+            }
+            @media (min-width: 700px) {
+                width: calc(50vw - 20px - 2 * var(--card-padding));
+                height: calc((50vw - 20px - 2 * var(--card-padding)) * 1.33);
+            }
+
+            @media (min-width: 1200px) {
+                width: calc(30vw);
+                height: calc(30vw * 1.33);
+            }
 
 
             & .inner-card {
@@ -133,6 +157,8 @@ body {
                 & .card-logo {
                     width: 2vw;
                     height: 2vw;
+                    min-width: 30px;
+                    min-height: 30px;
                     background-image: var(--recto-card-logo);
                     background-size: contain;
                     background-repeat: no-repeat;

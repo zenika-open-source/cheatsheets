@@ -10,7 +10,7 @@ body {
 
     width: var(--total-width);
     height: var(--total-height);
-    font-size: calc(var(--global-font-size) * 0.8) !important;
+    font-size: 3mm !important;
 
     -webkit-print-color-adjust:exact !important;
     print-color-adjust:exact !important;
