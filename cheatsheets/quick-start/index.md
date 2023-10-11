@@ -27,6 +27,7 @@ Config file `config.json` represent the metadatas of your cheatsheet.
   "secondaryColor": "#3e3e98",
   "name": "Template Column",
   "description": "The description that appear on the main page",
+  "categoryId": "iot",
   "icon": "assets/logo.png",
   "templateParams": {...}
 }
@@ -37,11 +38,35 @@ Config file `config.json` represent the metadatas of your cheatsheet.
  - **secondaryColor**: your secondary color, appear in header & footer
  - **name**: name of the cheatsheet, use in header
  - **description**: a quick description of the content
+ - **categoryId**: category id of `/cheatsheets/categories.json` file
  - **icon**: image around 80px x 80px use in header
  - **templateParams**: template specific params, see template cheatsheet
 
 :::
 ::: column
+
+# Categories
+
+Some categories already exists in project `/cheatsheets/categories.json` file, but you can add one if needed.
+
+To do that you have to add an item in the json array with specific properties 
+
+```json
+[
+  {
+    "id": "category_ref",
+    "name": "Category name",
+    "icon": "material_icon"
+  },
+  ...
+]
+```
+
+- **id**: the reference you can use next id cheatsheet config.json
+- **name**: the name display in website
+- **icon**: material icon name you can find [on google font website](https://fonts.google.com/icons)
+
+__Note: categories order in json file is important__
 
 # Markdown file
 
@@ -69,6 +94,8 @@ __emphasis__
 > blocquote
 `code string`
 ```
+:::
+::: column
 
 ## List
 
@@ -85,8 +112,7 @@ __emphasis__
  - Item 2
  - Item 3
 ```
-:::
-::: column
+
 ## Code
 Block of code
 ```markdown
