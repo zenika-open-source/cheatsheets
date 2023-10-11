@@ -64,6 +64,7 @@ export async function computeCheatsheet(cheatsheet: string): Promise<CheatsheetC
   const context: CheatsheetContext = {
     cheatsheet,
     title: config.name,
+    categoryId: config.categoryId,
     description: config.description,
     mainColor: config.mainColor,
     secondaryColor: config.secondaryColor,
@@ -89,9 +90,16 @@ export async function computeCheatsheet(cheatsheet: string): Promise<CheatsheetC
   return context;
 }
 
-export function buildIndex(cheatsheetsContext: CheatsheetContext[]): void {
+export type CategorizedCheatsheets = {
+  [key: string]: CheatsheetContext[]
+}
+
+export function buildIndex(cheatsheetsCategories: CategorizedCheatsheets): void {
+  const categories = JSON.parse(readFileSync(`${cheatsheetDir}categories.json`, { encoding: 'utf-8' }));
+
   const context = {
-    cheatsheetsContext
+    cheatsheetsCategories,
+    categories
   };
   console.log('Build index file');
 

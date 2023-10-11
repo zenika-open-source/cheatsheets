@@ -4,6 +4,7 @@
   "secondaryColor": "#F2A557",
   "name": "Template Flip Card",
   "description": "Flip card template allowing you to create many card with recto/verso. CSS animation make it interactive and you can export it as pdf.",
+  "categoryId": "project_documentation",
   "icon": "assets/logo.png",
   "templateParams": {
     "rectoCardLogo": "assets/zenika.webp",
