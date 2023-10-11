@@ -4,6 +4,7 @@
   "secondaryColor": "#a13c3e",
   "name": "ESP32",
   "description": "Start coding IOT devices with thie strength of Arduino ecosystem and the power of ESP32",
+  "categoryId": "iot",
   "icon": "assets/logo.png",
   "templateParams": {
     "colNumber": 3

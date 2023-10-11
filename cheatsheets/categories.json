@@ -1,0 +1,12 @@
+[
+  {
+    "id": "project_documentation",
+    "name": "Project documentation",
+    "icon": "news"
+  },
+  {
+    "id": "iot",
+    "name": "IOT",
+    "icon": "home_iot_device"
+  }
+]

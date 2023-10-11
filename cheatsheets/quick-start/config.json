@@ -4,5 +4,6 @@
   "secondaryColor": "#3e3e98",
   "name": "Cheatsheet quick start",
   "description": "A guide to allow you to create your first cheatsheet.",
+  "categoryId": "project_documentation",
   "icon": "assets/logo.png"
 }

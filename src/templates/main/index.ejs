@@ -3,23 +3,29 @@
   <head>
     <%- include('/partials/head.ejs') %>
     <title>Awesome cheatsheets</title>
-    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <%- include('/partials/header.ejs') %>
     <main>
       <h1>Awesome cheatsheets !</h1>
-      <div class="cards">
-      <% for(var i = 0; i < cheatsheetsContext.length; i++) { %>
-        <a class="card" href="./<%= cheatsheetsContext[i].cheatsheet %>/">
-          <div class="circle">
-            <img src="<%= cheatsheetsContext[i].cheatsheet %>/<%= cheatsheetsContext[i].icon %>" />
+      <% for(let category of categories) { %>
+        <% if(cheatsheetsCategories[category.id]?.length > 0) { %>
+          <% var cheatsheetsContext = cheatsheetsCategories[category.id]; %>
+          <h2><span class="material-symbols-outlined"><%= category.icon %></span><%= category.name %></h2>
+          <div class="cards">
+          <% for(var i = 0; i < cheatsheetsContext.length; i++) { %>
+              <% var cheatsheetContext = cheatsheetsContext[i]; %>
+            <a class="card" href="./<%= cheatsheetContext.cheatsheet %>/">
+              <div class="circle">
+                <img src="<%= cheatsheetContext.cheatsheet %>/<%= cheatsheetContext.icon %>" />
+              </div>
+              <label><%= cheatsheetContext.title %></label>
+              <p><%= cheatsheetContext.description %></p>
+            </a>
+          <% } %>
           </div>
-          <label><%= cheatsheetsContext[i].title %></label>
-          <p><%= cheatsheetsContext[i].description %></p>
-        </a>
+        <% } %>
       <% } %>
-      </div>
     </main>
     <%- include('/partials/footer.ejs') %>
   </body>

@@ -60,3 +60,65 @@ header {
   margin: 0;
   line-height: 1.5em;
 }
+
+main {
+  width: 100%;
+  padding-top: 64px;
+
+  & h2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--active-text-color);
+    padding-left: 32px;
+    & span.material-symbols-outlined {
+      font-size: 1.5em;
+      margin-right: 5px;
+    }
+  }
+
+  & .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    margin: 32px 0 64px 0;
+    padding-left: 32px;
+
+    & .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 20px;
+      background-color: var(--background-secondary-color);
+      border-radius: 4px;
+
+      & .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(45deg, rgba(208, 31, 87, 1) 0%, rgba(221, 32, 72, 1) 100%);
+      }
+
+      & img {
+        width: 50%;
+        height: 50%;
+      }
+
+      & label {
+        width: 100%;
+        padding-top: 20px;
+        font-size: 1.4em;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      & p {
+        margin: 28px 0 0;
+      }
+    }
+  }
+}
