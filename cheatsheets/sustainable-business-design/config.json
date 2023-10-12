@@ -1,0 +1,15 @@
+{
+  "template": "flip-card",
+  "mainColor": "#5151c5",
+  "secondaryColor": "#3e3e98",
+  "name": "Sustainable Business Design",
+  "description": "zazdadz",
+  "categoryId": "project_documentation",
+  "icon": "assets/logo.png",
+  "templateParams": {
+    "rectoCardLogo": "assets/zenika.webp",
+    "versoCardLogo": "assets/footer.webp",
+    "cardGradientColor1": "rgba(191,30,104,1)",
+    "cardGradientColor2": "rgba(238,34,56,1)"
+  }
+}
