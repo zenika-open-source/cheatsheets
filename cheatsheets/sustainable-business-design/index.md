@@ -254,10 +254,7 @@ Dans le cadre du développement d'un produit en adéquation avec les principes d
 Il est important de connaître les objectifs de la politique RSE pour mettre en place des actions en lien avec celle-ci, et ainsi ancrer la démarche NR dans un contexte global, ce qui facilitera l'ensemble des décisions prises au sein du projet, pour le produit, pour les utilisateurs, etc. 
 Il se peut également que certains indicateurs soient à intégrer pour mettre en avant le produit vis-à- vis de la gouvernance. 
 
-:::img small
 ![RSE](assets/actions-rse.png "Exemples d'impacts via les actions RSE")
-:::
-
 
 ::::
 
