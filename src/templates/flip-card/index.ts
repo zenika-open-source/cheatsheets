@@ -46,6 +46,17 @@ function initializeTemplate(mit: MarkdownIt) {
           return '</div></div>';
         }
       }
+    })
+    .use(MarkdownItContainer, 'img', {
+      validate: validateToken('img'),
+      render: (tokens: any, id: number) => {
+        if (tokens[id].nesting === 1) {
+          const size = tokens[id].info.split(' ')[1 ];
+          return `<div class="img ${size}">`;
+        } else {
+          return '</div>';
+        }
+      }
     });
 }
 
