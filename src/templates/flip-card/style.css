@@ -119,6 +119,8 @@ body {
             }
 
             & .verso {
+                display: flex;
+                flex-direction: column;
                 font-size: 1.2em;
                 transform: rotateY(180deg);
 
@@ -139,6 +141,28 @@ body {
 
                     & .card-logo {
                         background-image: var(--verso-card-logo);
+                    }
+                }
+
+                & img {
+                    max-width: 100%;
+                }
+                & .img {
+                    width: 100%;
+                    &.small img {
+                        max-width: 30%;
+                    }
+                    &.medium img {
+                        max-width: 60%;
+                    }
+                    &.large img {
+                        max-width: 90%;
+                    }
+                    & p {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        margin: 0;
                     }
                 }
             }

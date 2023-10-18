@@ -83,6 +83,9 @@ The front content
 :::: verso
 The back content
 [...]
+::: img small|medium|large
+![An optional image](assets/image.png "...")
+::: 
 :::: 
 
 
