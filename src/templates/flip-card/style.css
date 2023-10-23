@@ -8,27 +8,52 @@ body {
     padding: 0;
     overflow-x: hidden;
     @media (max-width: 700px) {
-        --global-font-size: 2vw;
+        --global-font-size: 1.8vw;
     }
 
     @media (min-width: 700px) {
-        --global-font-size: 1vw;
+        --global-font-size: 0.95vw;
     }
 
     @media (min-width: 1200px) {
-        --global-font-size: min(0.6vw, 14px);
+        --global-font-size: 0.63vw;
     }
 
     & .container {
-        --card-padding: 20px;
+        @media (max-width: 700px) {
+            --card-padding: 2vw;
+        }
+
+        @media (min-width: 700px) {
+            --card-padding: 1vw;
+        }
+
+        @media (min-width: 1200px) {
+            --card-padding: 20px;
+        }
         position: relative;
 
+        & p {
+            line-height: 1.7em;
+        }
+
+        & p, & ul {
+            margin: 0.6em 0;
+        }
+
         & main {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
+            display: grid;
             gap: 20px;
-            padding: 40px 40px;
+            padding: 4em;
+            @media (max-width: 700px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            @media (min-width: 700px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media (min-width: 1200px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
         & main::after {
             content: "";
@@ -36,21 +61,7 @@ body {
         }
 
         & .card {
-
-            @media (max-width: 700px) {
-                width: 90vw;
-                height: calc(90vw * 1.33);
-            }
-            @media (min-width: 700px) {
-                width: calc(50vw - 20px - 2 * var(--card-padding));
-                height: calc((50vw - 20px - 2 * var(--card-padding)) * 1.33);
-            }
-
-            @media (min-width: 1200px) {
-                width: calc(30vw);
-                height: calc(30vw * 1.33);
-            }
-
+            aspect-ratio: 1 / 1.33;
 
             & .inner-card {
                 position: relative;
@@ -59,6 +70,10 @@ body {
                 transition: transform 0.6s;
                 transform-style: preserve-3d;
                 box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+            }
+
+            & ul {
+                padding-left: 3em;
             }
 
             & .recto, & .verso {
@@ -79,7 +94,7 @@ body {
                     flex-direction: column;
                     width: calc(100% - 2 * var(--card-padding));
                     height: 30%;
-                    margin-bottom: 10px;
+                    margin-bottom: 1em;
                     padding: var(--card-padding);
                     background: linear-gradient(45deg, var(--card-gradient-color1) 0%, var(--card-gradient-color2) 100%);
                     color: var(--card-head-color);
@@ -97,7 +112,7 @@ body {
 
                     &:has(img) {
                         text-align: center;
-                        margin: 10px 0;
+                        margin: 1em 0;
                     }
                 }
 
@@ -114,7 +129,15 @@ body {
 
                 & img {
                     max-width: 80%;
-                    max-height: calc(10vw * 1.33);
+                    @media (max-width: 700px) {
+                        max-height: calc(30vw);
+                    }
+                    @media (min-width: 700px) {
+                        max-height: calc(20vw);
+                    }
+                    @media (min-width: 1200px) {
+                        max-height: calc(10vw);
+                    }
                 }
             }
 
@@ -176,13 +199,11 @@ body {
                 width: 100%;
                 bottom: 0;
                 left: 0;
-                padding: 10px 0;
+                padding: 0.7em 0;
 
                 & .card-logo {
-                    width: 2vw;
-                    height: 2vw;
-                    min-width: 30px;
-                    min-height: 30px;
+                    width: 3.5em;
+                    height: 3.5em;
                     background-image: var(--recto-card-logo);
                     background-size: contain;
                     background-repeat: no-repeat;
