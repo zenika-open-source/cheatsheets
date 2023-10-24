@@ -10,8 +10,8 @@
     "icon": "home_iot_device"
   },
   {
-    "id": "git",
-    "name": "GIT",
+    "id": "source_control",
+    "name": "Source control",
     "icon": "captive_portal"
   }
 ]
