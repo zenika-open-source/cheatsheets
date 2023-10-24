@@ -10,7 +10,7 @@ body {
 
     width: var(--total-width);
     height: var(--total-height);
-    font-size: 3mm !important;
+    font-size: 2.3mm !important;
 
     -webkit-print-color-adjust:exact !important;
     print-color-adjust:exact !important;
@@ -25,11 +25,13 @@ body {
             margin: 0;
             padding: 0;
             gap: 0;
+            grid-template-columns: repeat(1, 1fr);
         }
 
         & .card {
             width: 100%;
             height: 100%;
+            aspect-ratio: unset;
 
             & .inner-card {
                 display: flex;
