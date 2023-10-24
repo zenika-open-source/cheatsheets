@@ -640,7 +640,7 @@ __Améliorer les fonctionnalités__
 # Définir des métriques 
 > Suivre l'impacts des actions réalisées
 :::
-```intro```
+
 ![Illustration](assets/Dashboard-pana.png "illustration de tableau de bord")
 
 **Les ultimes métriques de l'impact environnemental sont celles d'un ACV, mais le processus est long, complexe. Alors comment faire ? Et que prendre en compte pour la partie sociale ?**
@@ -921,6 +921,210 @@ CLS (mesure la stabilité visuelle) surveille le décalage cumulatif de mise en 
 
 Note : le FID est mesurable à la main, mais dans les outils il souvent est remplacé par le Total Blocking Time (TBT)
 
+
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Rendre accessible à tous__
+# Tester le design dans toutes les tailles d'écrans identifiés
+> Tester et se mettre à la place de l'utilisateur
+:::
+
+![Test](assets/test.png "Illustration d'échange entre plusieurs personnes par vidéo call")
+
+**En plus de s'assurer d'être proche des besoins utilisateurs, les tests vont donner des informations pertinentes sur l'usage du produit dans des conditions réelles d'utilisation.**
+
+::::
+
+::::verso
+__Rendre accessible à tous__
+# Tester le design dans toutes les tailles d'écrans identifiés
+
+**Malgré une réflexion poussée pendant la conception, les surprises peuvent être nombreuses pendant la réalisation. La multitude des cas d'usage ne facilite pas cette étape.**
+
+Les critères qui multiplient les cas d’usage sont nombreux :
+* les personae (profil, usage, objectifs, etc.),
+* la multitude de périphériques (ordinateur, tablette, mobile),
+* les navigateurs (Chrome, Firefox, Safari etc.),
+* le réseau, etc.
+
+Les étapes clés sont la préparation du protocole de test (panel, scénario, contexte d'usage, questionnaire) et l'analyse des résultats.
+Les fiches personae (voir carte correspondante) fournissent de nombreuses infos pour les tests.
+
+Tester avec un **réseau dégradé** est une bonne pratique pour s'assurer que le produit est disponible au plus grand nombre d'utilisateurs avec une couverture réseau inégale.
+
+:::img small
+![DevTool](assets/devTools.png "Impression d'écran de l'outil de développement sur Chrome")
+:::
+
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Travailler les contenus__
+# Tri par carte
+> Déterminer précisément et efficacement l’organisation et la distribution des pages d’un site internet
+:::
+
+![Tri](assets/tri-carte.png "Tri par carte")
+**Le tri de cartes (aussi appelé card sorting) est une méthode efficace pour travailler sur l'organisation des contenus et l'arborescence de votre produit. On améliore ainsi l'architecture de l'information pour faciliter la navigation.**
+::::
+
+::::verso
+__Travailler les contenus__
+# Tri par carte
+
+La **conduite d’entretiens** auprès des utilisateurs finaux permet de déterminer précisément quelles sont leurs attentes en termes de contenus. En amont du tri de cartes, il est nécessaire de procéder à un **inventaire détaillé** des contenus.
+
+* **Présentation des cartes** : les cartes sont présentées aux participants « en vrac » (un jeu des cartes par participant). 
+
+* **Validation des cartes (pertinence + libellés)** : les participants valident chacune des cartes. Selon les cas, ils ont la possibilité de renommer / supprimer / fusionner les cartes ou bien de créer de nouvelles cartes à l’aide des cartes vierges.
+
+* **Regroupement des cartes** : en fonction de leurs points communs, plusieurs groupes de cartes similaires sont créés. Une même carte peut être utilisée au sein de plusieurs groupes.
+
+* **Libellé des groupes** : enfin, les participants vont donner un nom aux groupes qu’ils viennent de former. Il ne s’agit en aucun cas du titre définitif de la rubrique mais du dénominateur commun aux cartes regroupés entre elles.
+
+* **Analyse des résultats** : elle est ensuite réalisée à la main afin d’identifier les regroupements les plus fréquents et les contenus constituant ces rubriques.
+
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Travailler les contenus__
+# Approche content first
+> Permettre une meilleure vision d’ensemble du design avant qu’ils ne deviennent des problèmes réels.
+:::
+
+![Content First](assets/content.png "Croquis de Faire ou ne pas faire")
+
+**Plutôt que de créer un design et de remplir le contenu, une approche de création de contenu conduit à une conception de l'expérience utilisateur sous forme de wireframes, ce qui permet de bien comprendre ce que vous voulez dire et comment vous voulez le dire.**
+
+::::
+
+::::verso
+__Travailler les contenus__
+# Approche content first
+
+**Donner la priorité au contenu signifie mettre en œuvre un processus de conception en plusieurs phases. Tout d'abord, évaluer et collecter des informations sur le contenu :**
+
+* **Définition des règles de la conception et la stratégie de contenu** : les types de contenu et leur précision, (textes, photos, graphiques, tableaux, listes…), le ton et le volume. 
+
+* **Réalisation d'un inventaire/audit** de contenu (voir aussi la carte : tri par carte). 
+
+* **Travail de pré-vision** avec une conversation map, une content map en fonction de vos personae.
+
+* Si vous concevez une application, vous pouvez **créer un user flow** qui met en évidence les étapes suivies pour atteindre un objectif souhaité. Les tâches et besoins utilisateurs sont ainsi déterminés et il est possible d'**ajouter des métriques éco-responsables** dès maintenant.
+
+* Organisez vos contenus et définissez des modèles de pages. Vous pouvez commencer à **créer vos wireframes.**
+
+Ce n’est pas le contenu exact ou définitif qui importe, mais un contenu qui s’en rapproche. Les mots sont essentiels pour aider les utilisateurs à accomplir leurs tâches.
+
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Travailler les contenus__
+# Format des contenus
+> Trouver l'équilibre entre illustration et légèreté
+:::
+
+![Content](assets/carroussel.png "Exemple de positionnement de contenu")
+
+**Après redimensionnement, ajustement de la qualité et compression, une photo peut être 14 fois plus légère tout en conservant une qualité tout à fait suffisante pour un usage web.**
+
+**Laisser les utilisateurs naviguer à leur propre rythme en leur donnant les moyens de contrôle sur les objets multimédia.**
+::::
+
+::::verso
+__Travailler les contenus__
+# Format des contenus
+
+**Même si son interface a été « éco-conçue », le service numérique peut être alourdi par les contenus présentés. Il vaut donc mieux maîtriser les intrants.**
+
+Voici quelques recommandations :
+
+* **Redimensionner, optimiser et compresser les images** : taille d'affichage adaptée, images adaptatives, vectorielles, lazy-loading.
+
+* **Bien choisir le format de fichier** pour les documents à télécharger.
+
+* **Limiter l’usage de vidéos** : attention aux fonds vidéos et à la lecture automatique - remplacer une vidéo par une image clicuable plutôt que d’utiliser un plugin qui intègre la vidéo dans la page - tester l’accessibilité.
+
+* **Limiter les animations** : une bonne pratique d’accessibilité et d'expérience utilisateur est d'éviter les gifs animés et l'autoplay.
+
+* **Utiliser les polices Système** : les polices standards linéales (sans serif) sont également recommandées pour l’accessibilité.
+
+* **Limitez l’utilisation de widgets et plugins** comme les icônes de réseaux sociaux, Google Maps, vidéos incrustées, etc. 
+
+Des tâches automatiques ou semi-automatiques intégrées au système de gestion de contenu : par exemple réduire automatiquement le poids et la taille des images.
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Bibliographie__
+# Aller plus loin
+> Formation, acteurs de références et bibliographie (sans classement)
+:::
+**Formations & certifications**
+* MOOC Numérique Responsable de l'INR
+* MOOC Inria Numérique responsable (fun-mooc)
+* GreenIT.fr
+* Eco-Z pour développeur ou PO/UX chez Zenika  
+
+**Institution ou groupe de référence en France**
+* ADEME - Agence de la transition écologique 
+* ARCEP - Autorité de Régulation des Communications Electroniques, des Postes et de la distribution de la Presse
+* Halte à l'Obsolescence Programmée
+* GreenIT.fr 
+* Institut du Numérique Responsable
+* DiNum - Direction interministérielle du numérique
+* EcoInfo (CNRS)
+* Point de MIR
+* Designers Ethiques
+* Shift Project
+::::
+
+::::verso
+__Bibliographie__
+# Aller plus loin
+
+**Les impacts**
+* Etudes de l'impact du numérique de GreenIT.fr, du Shift Project, de l'ARCEP et de France Stratégie.
+* Etudes sur les ressources d'EcoInfo, Gauthier Roussilhe, Guillaume Pitron.
+* Rapports sur les DEEE de l'ONU.
+* La librairie de l'ADEME.
+
+**Ecoconception**
+* Référentiels de pratiques (115 bonnes pratiques, GR491, RGESN, GreenConcept, AFNOR Spec 2201, Designers éthiques, Apple et Google). 
+* Convergences (Guide de la CNIL, RGAA, Opquat, ADEME).
+* Blogs de Boavizta, Gauthier Roussilhe, Pôle écoconception.
+
+**Exemples de site responsable**
+* Exemple de site écoconçu lowww.directory.
+* Site du low-tech magazine.
+* Site léger Wikipedia, Craigslist, EcoloGeek, Dalkia.
+* Site accessible gov.uk.
+* 50 exemples de sites internet basse consommation par Cédric Liardet.
 
 ::::
 
