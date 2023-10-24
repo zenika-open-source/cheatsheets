@@ -9,12 +9,13 @@
 body {
   color: var(--main-text-color);
   margin: 0;
-  padding: 0 128px;
+  padding: 0 min(10vw, 128px);
   font-size: 0.875rem;
   font-family: Nunito;
   font-weight: 400;
   line-height: 1.188rem;
-  background-color: var(--background-main-color);
+  background-image: url("./background.png");
+  background-attachment: fixed;
 }
 
 a {
@@ -79,16 +80,31 @@ main {
 
   & .cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 48px;
-    margin: 32px 0 64px 0;
+    margin: 32px 0;
     padding-left: 32px;
+
+    @media (width > 1600px) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @media (width < 1600px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (width < 1300px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (width < 1000px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (width < 700px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
 
     & .card {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 48px 20px;
+      padding: 32px 20px;
       background-color: var(--background-secondary-color);
       border-radius: 6px;
       box-shadow: 4px 4px 3px 0px #0a0a0a;
