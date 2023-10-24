@@ -4,7 +4,7 @@
   "secondaryColor": "#74a644",
   "name": "Boîte à outil de conception responsable",
   "description": "A destination des équipes souhaitant faire un projet plus écologique et inclusif",
-  "categoryId": "project_documentation",
+  "categoryId": "eco_concept",
   "icon": "assets/logo.png",
   "templateParams": {
     "rectoCardLogo": "assets/zenika.webp",
