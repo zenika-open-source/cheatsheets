@@ -44,6 +44,7 @@ This project is open-source and available under the [Apache License](LICENSE).
       <td align="center" valign="top" width="14.28%"><a href="http://nkcreation.com"><img src="https://avatars.githubusercontent.com/u/4450152?v=4" width="100px;" alt=""/><br /><sub><b>Nicolas L.</b></sub></a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://syedamaham.dev/"><img src="https://avatars.githubusercontent.com/u/79671325?v=4" width="100px;" alt=""/><br /><sub><b>Syeda Maham Fahim</b></sub></a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/xcassel"><img src="https://avatars.githubusercontent.com/u/57092100?v=4" width="100px;" alt=""/><br /><sub><b>Xavier Cassel</b></sub></a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.bbourgeois.dev"><img src="https://avatars.githubusercontent.com/u/20949060?v=4" width="100px;" alt=""/><br /><sub><b>Benjamin Bourgeois</b></sub></a></td>
     </tr>
   </tbody>
 </table>
