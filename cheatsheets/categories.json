@@ -5,6 +5,11 @@
     "icon": "news"
   },
   {
+    "id": "eco_concept",
+    "name": "Eco concept",
+    "icon": "nest_eco_leaf"
+  },
+  {
     "id": "iot",
     "name": "IOT",
     "icon": "home_iot_device"
