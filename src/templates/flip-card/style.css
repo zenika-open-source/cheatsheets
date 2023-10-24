@@ -152,10 +152,8 @@ body {
                     font-size: 1.8em;
                 }
 
-                & p {
-                    &:has(strong):first-child {
-                        color: var(--main-color);
-                    }
+                & > p:first-child strong {
+                    color: var(--main-color);
                 }
 
 
