@@ -548,3 +548,380 @@ A travers ces questions, différentes solutions sont identifiées, certaines arr
 ::::
 
 :::::
+
+:::::card
+
+::::recto
+:::head
+__Améliorer les fonctionnalités__
+# Questions C.O.E.U.R.
+> Se concentrer sur un aspect précis de simplification de l’interface
+:::
+
+![Question coeur](assets/coeur.png "Cartes des questions coeurs")
+Ce n'est pas tâche facile de créer une interface simple, il n'est pas rare de créer de la complexité s'en rendre compte. Les questions C.O.E.U.R. vont aider l'équipe à réduire la complexité de certains éléments. 
+::::
+
+::::verso
+__Améliorer les fonctionnalités__
+# Questions C.O.E.U.R.
+
+**La méthode C.O.E.U.R. imaginée et réalisée par Rémi Guyot, se présente sous la forme d’un jeu de cartes. Elle a pour objectif de diminuer la complexité.**
+
+Cet atelier d'idéation va mener l'équipe à repenser une interface trop complexe ou chargée, en travaillant individuellement ou par groupe sur un aspect précis de simplification de l’interface : 
+
+* **C pour Cacher :** 
+  * Mettre hors de vue un élément d’interface non indispensable.
+
+* **O pour Ordonner :** 
+  * Apporter de la hiérarchie et de la structure à l’interface en organisant différemment certains composants.
+
+* **E pour Éliminer :** 
+  * Supprimer tout bonnement un composant de l’écran.
+
+* **U pour Uniformiser :** 
+  * Standardiser, harmoniser des éléments entre eux.
+
+* **R pour Réduire :** 
+  * Diminuer l’importance d’un élément de l’interface.
+
+Les interfaces les plus simples sont aussi souvent les plus complexes à réaliser. Combattre la complexité est plus facile en se concentrant sur des tâches uniques.
+
+Cette méthode peut être utilisée pour simplifier les contenus ainsi que les fonctionnalités.
+
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Améliorer les fonctionnalités__
+# Green IT Analysis
+> Quantifier les impacts environnementaux
+:::
+
+![Green IT Analysis](assets/green-index.png "Résultat de l'analyse avec Green IT Analysis")
+
+**L’extension Green IT Analysis permet en quelques clics d'avoir une idée de l'empreinte environnementale d'une page web et fournit une liste de bonnes pratiques à appliquer.** 
+**La note EcoIndex peut être un premier indicateur simple à mettre en place pour suivre les améliorations du produit ou de réaliser un comparatif.** 
+
+::::
+
+::::verso
+__Améliorer les fonctionnalités__
+# Green IT Analysis
+
+**GreenIT-Analysis est une extension pour navigateur qui vous permet de quantifier les impacts environnementaux d'un parcours utilisateur complet, en se basant sur des ACV. Cela permet de voir l'évolution rapidement d'amélioration visant l'écoconception.**
+
+L’analyse se base sur une ACV réalisée pour une application web et comprend deux critères : les émissions de **gaz à effets de serres** en grammes équivalent CO2 et la **consommation d’eau** en centilitres. 
+
+Une note entre A et G est fournie, permettant de rapidement comprendre la performance environnementale de la page. Cette note est calculée à partir de trois critères : 
+* la **complexité de la page**, représentée par son nombre de composants (nombre d'éléments du DOM), 
+* le **poids de la page** 
+* le **nombre de requêtes**. 
+
+L’application teste un sous-ensemble des 115 bonnes pratiques d’écoconception web et fournit un rapport, ce qui permet d’**identifier rapidement des pistes d’améliorations**. 
+
+Toute l’analyse se fait en local, un historique permet de sauvegarder les notes et impacts page par page pour analyser un parcours client.
+
+Vous pouvez quantifier les impacts environnementaux d'un parcours utilisateur en lançant et en enregistrant des analyses successives après chaque page visitée. 
+
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Améliorer les fonctionnalités__
+# Définir des métriques 
+> Suivre l'impacts des actions réalisées
+:::
+```intro```
+![Illustration](assets/Dashboard-pana.png "illustration de tableau de bord")
+
+**Les ultimes métriques de l'impact environnemental sont celles d'un ACV, mais le processus est long, complexe. Alors comment faire ? Et que prendre en compte pour la partie sociale ?**
+**Définir des indicateurs permet de voir si les actions vont dans le bon sens dans la limitation de l'impact environnemental et dans l'amélioration de l'impact social.**
+::::
+
+::::verso
+__Améliorer les fonctionnalités__
+# Définir des métriques 
+
+**Hormis la quantité de CO2eq produit par unité fonctionnelle qui commence à prendre sa place dans les indicateurs responsables d'un service numérique, il n'y a pas d'indicateur partagé par tous. Effectivement, chaque service est différent, ainsi chaque équipe a des objectifs d'amélioration variables.**
+
+L'objectif est de superviser la mise en place de pratiques identifiées (comme celles partagées dans ces cartes). 
+
+Voici quelques pistes d'indicateurs "faciles" à suivre : 
+* la **rétrocompatibilité** en identifiant les plus anciens OS, navigateurs ou appareils supportés.
+* les analytiques notamment le **temps d'utilisation** par unité fonctionnelle principale.
+* la **performance** dans différents contextes d'utilisation (matériel, type de réseaux, etc.) avec les core vitals ou le speed index.
+* la **satisfaction utilisateur** grâce à des enquêtes, des tests ou grâce à la méthode Kano.
+* les données et l'**évolution de leur volume**, accès, utilisation.
+* la facture de l'hébergement du service.
+* **conformité de l'accessibilité** par rapport à RGAA.
+
+Il existe des indicateurs plus techniques comme le nombre de composants, de CPU consommé, d'échanges réseau, le temps de réponse d'API, etc.
+
+Il est important de se limiter à un certain nombre d'indicateurs sinon ils deviennent trop complexes à exploiter et tombent souvent dans l'oubli.
+
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Améliorer les fonctionnalités__
+# Créer un score responsable
+> Se positionner dans un projet durable
+:::
+
+![Développeur durable](assets/dev-durable.png "Les piliers du développement durable")
+
+**Le numérique responsable est une solution à la réalisation d'un développement (plus) durable, c'est-à-dire avec un équilibre des axes personnes/planète/prospérité. Il est donc nécessaire de savoir identifier si le produit agit vers cet équilibre ou fait pencher la balance d'un côté ou d'un autre.**
+
+::::
+
+::::verso
+__Améliorer les fonctionnalités__
+# Créer un score responsable
+
+**Le score responsable est un outil de posture du produit par rapport aux objectifs du développement durable, il complète les métriques "classiques" en identifiant l'empreinte du produit sur les 3 piliers du développement durable.**
+
+Spécifique ou inspiré de scores existants (comme ci-dessous), le score est en lien avec les objectifs ou challenges responsables identifiés lors d'un Product canvas (voire carte correspondante), qui peuvent donner les grands axes de notation. Pour chacun de ces axes, le but est d'identifier le niveau de réalisation actuel et ainsi de définir les actions à mettre en place pour respecter les attentes responsables identifiées pour le produit. 
+
+Ici, l'exemple du "Score d'empreintes du produit", notation responsable pour évaluer un produit issu du livre blanc de Fabrice des Mazery intitulé **Responsables, réduire l'empreinte de nos produits numériques sur les individus, l'environnement et l'économie.**
+:::img medium
+![Note responsable](assets/note-responsable.png "Exemple de score responsable issu du livre blanc de Thiga")
+:::
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Améliorer les fonctionnalités__
+# Limiter le nombre d'interactions
+> Fluidifier une interface et permettre à un utilisateur d’atteindre plus rapidement son objectif
+:::
+
+![Nombre d'interaction](assets/interaction.png "Illustration de flux de parcours utilisateur")
+
+**Suivre le nombre d'actions pour chaque scénario conçu avec une unité fonctionnelle et évaluer les impacts et métriques de chacun afin de proposer une expérience fluide et sobre.**
+::::
+
+::::verso
+__Améliorer les fonctionnalités__
+# Limiter le nombre d'interactions
+
+**Les scénarios sont matérialisés selon les éléments à analyser. Cela peut être un prototype pour évaluer un parcours utilisateur ou un élément précis développé pour avoir un contexte réel.**
+
+Vous avez déterminé vos scénarios d'utilisation avec l'Unité fonctionnelle (voir carte correspondante) ou avec le User Flow. Votre objectif est alors d'évaluer l'expérience utilisateur afin de la rendre fluide et **réduite en impacts** générés par ce parcours.
+
+Pour cela, l'équipe de conception aura définit **des critères pour effectuer des tests** afin de choisir le scénario le moins impactant.
+
+**Des exemples de critères pour effectuer les tests :**
+* nombre d'écrans nécessaires à l’utilisateur pour exécuter une tâche ;
+* nombre de clics ;
+* nombre de champs ;
+* temps de chargement d'une page ;
+* temps nécessaire à l’utilisateur pour finaliser une tâche ;
+* pourcentage de tâches correctement exécutées par les utilisateurs ;
+* combien d’erreurs ont été commises par l’utilisateur ;
+* nombre de requêtes...
+
+Suivre ces données permet aussi d'améliorer continuellement le produit ou service sur lequel il faut se concentrer.
+
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Rendre accessible à tous__
+# Personae
+> Se concentrer sur les besoins utilisateurs
+:::
+
+![personae](assets/personae.png "personae")
+
+**Les fiches personae permettent à l’équipe de conception de rester centrée sur les utilisateurs finaux, de déterminer ce que le produit ou service doit faire et quels bénéfices ils vont apporter.**
+
+::::
+
+::::verso
+__Rendre accessible à tous__
+# Personae
+
+Un persona est un archétype représentant un groupe de personnes dont les comportements, motivations et buts sont proches. C'est un **livrable de la recherche utilisateur** qui condense les informations qui seront utiles à l'équipe de conception.
+
+Il y a une information indispensable à avoir, c'est **connaître la configuration matérielle**, et l’inclure dans la **stratégie de test**. En effet, un des piliers de l'éco-conception est la réduction d'impact via le matériel, l'utilisateur devant garder son matériel le plus longtemps possible et consommer le moins de ressources possible.
+
+**Les informations importantes :** 
+* le(s) type(s) d’appareil(s).
+* le type de connexion (quelle utilisabilité avec des connexions bas débit ?).
+* le type de forfait.
+* le nombre d’heure d’utilisation.
+
+Les scénarios d’utilisation, les modalités d’interaction, l’architecture d’information doivent être pensés pour permettre aux personae d’atteindre leurs buts dans les meilleures conditions. L'équipe de conception sera amenée à arbitrer sur les choix à faire pour construire un produit adapté aux besoins des utilisateurs tout en allant vers plus de sobriété.
+
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Rendre accessible à tous__
+# Accessibilité, les tests de bases
+> Permettre à tout le monde, sans discrimination, d’avoir accès aux services numériques
+:::
+
+![Accessibilité](assets/accessibilite-1.png "aucun")
+
+**Le numérique responsable a pour objectif d’améliorer l'empreinte écologique et sociale des technologies numériques. L’accessibilité numérique permet à tout le monde, sans discrimination, d’avoir accès aux services numériques, indépendamment de la situation de l’utilisateur.**
+
+::::
+
+::::verso
+__Rendre accessible à tous__
+# Accessibilité, les tests de bases
+
+**D’après l’enquête “Handicap, incapacités, dépendance de l’INSEE” (HID 1999), 13 millions de personnes sont concernées par le handicap en France. Ce chiffre atteint 20 millions de personnes si l’on prend en compte les seniors qui sont peu habitués à utiliser les outils numériques.**
+
+**Les sites web**
+
+Desktop :
+* Navigation clavier.
+* Zoom 200%.
+
+Mobile :
+* L’affichage s’adapte, quelle que soit l’orientation de l’appareil.
+* L’application prend en compte les préférences système d’affichage (ex : taille de la police ou des boutons).
+
+**Les applications mobiles natives**
+* Est-ce que l'application peut-être utilisée quelque soit l'orientation de l'appareil ?
+* Est-ce que les préférences de l'utilisateur réglées au niveau du système sont prises en compte (mode sombre, taille du texte, animation réduite, etc) ?
+* Est-ce que les éléments interactifs sont assez gros pour qu'on puisse les toucher sans activer autre chose par accident ?
+
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Rendre accessible à tous__
+# Accessibilité, aller plus loin avec les référentiels
+> Permettre à tout le monde, sans disrimination, d’avoir accès aux services numériques
+
+:::
+
+![RGAA](assets/rgaa.png "Définition du RGAA")
+
+**Il existe plusieurs normes d’accessibilité à vérifier en amont pour contrôler la conformité d’un service numérique et ainsi permettre à tous les utilisateurs d’accéder équitablement au service. En France, les organismes publics et certaines entreprises privées ont une obligation légal de mise en conformité avec le RGAA et doivent publier une déclaration d'accessibilité sous peine de sanctions.**
+
+::::
+
+::::verso
+__Rendre accessible à tous__
+# Accessibilité, aller plus loin avec les référentiels
+
+**Pour s'assurer de la conformité d’un service numérique, les concepteurs disposent de plusieurs outils pour intégrer les bonnes pratiques lors de la phase de conception puis de développement.**
+
+**Pourquoi le faire ?**
+* Améliorer le **référencement naturel**. Un site accessible aux personnes en situation de handicap, est également mieux positionné dans les résultats des moteurs de recherche.
+* Lutter contre les **discriminations** et multiplier ses **utilisateurs**. 
+* Assurer une meilleure **expérience utilisateur** (UX) pour tous.
+
+**Référentiels et guides essentiels** 
+* Le Référentiel Général d'Amélioration de l'Accessibilité (RGAA) propose un cadre opérationnel de vérification de la conformité aux exigences légales d'accessibilité via **106 critères de contrôle** accompagné de tests et méthodes techniques.
+* Les **Guides Apple** (https://developer.apple.com/accessibility) et **Android** (https://support.google.com/accessibility/android) définissent les bonnes pratiques à suivre et les outils concret à utiliser pour créer des applications mobiles natives accessibles.
+
+Même si ces éléments sont principalement à destination de l’équipe de réalisation, il est **important d’intégrer les contraintes de design et techniques** dans les décisions métiers.
+
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Rendre accessible à tous__
+# Responsive
+> Proposer le bon contenu à différentes plateformes et optimiser les performances d'un site
+:::
+
+![responsive](assets/responsive.png "Illustration de la notion de responsive en développement web)
+
+**Adapter son interface selon la dimension de l’écran sur lequel il est consulté permet de rendre disponibles les contenus pour tout type de terminal, pour des ordinateurs de bureau comme pour des smartphones.**
+
+::::
+
+::::verso
+__Rendre accessible à tous__
+# Responsive
+
+**Un projet de design responsive et responsable doit prendre en compte les facteurs suivants à parts égales :**
+
+**Utilisabilité :** la façon dont l’interface utilisateur d’un site web est présentée à l’utilisateur, et dont elle répond à différentes interactions et conditions de navigation. 
+
+**Accès :** la possibilité pour les utilisateurs de tous les appareils, navigateurs et technologies d’accessibilité d’accéder aux fonctionnalités et au contenu de votre site et de les comprendre. 
+
+**Durabilité :** la capacité pour les technologies d’un site web ou d’une application de fonctionner sur les appareils qui existent aujourd’hui et de continuer à être utilisables et accessibles par tous les utilisateurs, appareils et navigateurs à l’avenir.
+
+**Performances :** la vitesse à laquelle les fonctionnalités et le contenu d’un site sont transmis à l’utilisateur et l’efficacité avec laquelle ils fonctionnent au sein de l’interface utilisateur.
+
+Concevoir d’abord pour petit écran permet d'aller à l'essentiel dans un premier temps et permet de s’assurer que le service fonctionnera correctement sur les appareils mobiles.
+
+::::
+
+:::::
+
+:::::card
+
+::::recto
+:::head
+__Rendre accessible à tous__
+# Core Web Vitals
+> Améliorer la vitesse de chargement et l’expérience utilisateur de tous les sites Internet
+
+:::
+
+![Core Web Vitals](assets/core-web-vitals.png "Explication des 3 Core Web Vitals")
+
+**Les Core Web Vitals sont des critères de performances simples et unifiés qui permettent de comprendre en un coup d'œil les principaux freins techniques et ergonomiques à l'utilisation de votre site web.**
+
+::::
+
+::::verso
+__Rendre accessible à tous__
+# Core Web Vitals
+
+**Signaux essentiels en français, cette nouvelle initiative de Google vise à améliorer la vitesse de chargement et l’expérience utilisateur (UX) de tous les sites Internet. Elle repose sur trois mesures et ces indicateurs sont maintenant intégrés dans la plupart des outils d’analyse de page Web.**
+**Les valeurs obtenues sont intégrées dans le classement SEO de Google depuis mai 2021.**
+
+**LCP (mesure la performance) marque le moment exact où le plus grand élément de contenu au-dessus du pli (ce que vous voyez sans défiler vers le bas) est entièrement chargé. 
+
+FID (mesure l'interactivité) mesure le temps entre le début du chargement et la possibilité d’interagir avec le contenu.
+
+CLS (mesure la stabilité visuelle) surveille le décalage cumulatif de mise en page c’est-à-dire que les éléments ne se déplacent plus visuellement sur la page.
+
+Note : le FID est mesurable à la main, mais dans les outils il souvent est remplacé par le Total Blocking Time (TBT)
+
+
+::::
+
+:::::
