@@ -98,7 +98,6 @@ main {
     flex-direction: row;
     align-items: center;
     color: var(--active-text-color);
-    padding-left: 32px;
     & span.material-symbols-outlined {
       font-size: 1.5em;
       margin-right: 5px;
@@ -109,7 +108,6 @@ main {
     display: grid;
     gap: 48px;
     margin: 32px 0;
-    padding-left: 32px;
     scroll-margin-top: 80px;
 
     @media (width > 1600px) {
