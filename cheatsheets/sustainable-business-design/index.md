@@ -864,7 +864,7 @@ __Rendre accessible à tous__
 > Proposer le bon contenu à différentes plateformes et optimiser les performances d'un site
 :::
 
-![responsive](assets/responsive.png "Illustration de la notion de responsive en développement web)
+![responsive](assets/responsive.png "Illustration de la notion de responsive en développement web")
 
 **Adapter son interface selon la dimension de l’écran sur lequel il est consulté permet de rendre disponibles les contenus pour tout type de terminal, pour des ordinateurs de bureau comme pour des smartphones.**
 
@@ -913,11 +913,11 @@ __Rendre accessible à tous__
 **Signaux essentiels en français, cette nouvelle initiative de Google vise à améliorer la vitesse de chargement et l’expérience utilisateur (UX) de tous les sites Internet. Elle repose sur trois mesures et ces indicateurs sont maintenant intégrés dans la plupart des outils d’analyse de page Web.**
 **Les valeurs obtenues sont intégrées dans le classement SEO de Google depuis mai 2021.**
 
-**LCP (mesure la performance) marque le moment exact où le plus grand élément de contenu au-dessus du pli (ce que vous voyez sans défiler vers le bas) est entièrement chargé. 
+**LCP (mesure la performance)** marque le moment exact où le plus grand élément de contenu au-dessus du pli (ce que vous voyez sans défiler vers le bas) est entièrement chargé. 
 
-FID (mesure l'interactivité) mesure le temps entre le début du chargement et la possibilité d’interagir avec le contenu.
+**FID (mesure l'interactivité)** mesure le temps entre le début du chargement et la possibilité d’interagir avec le contenu.
 
-CLS (mesure la stabilité visuelle) surveille le décalage cumulatif de mise en page c’est-à-dire que les éléments ne se déplacent plus visuellement sur la page.
+**CLS (mesure la stabilité visuelle)** surveille le décalage cumulatif de mise en page c’est-à-dire que les éléments ne se déplacent plus visuellement sur la page.
 
 Note : le FID est mesurable à la main, mais dans les outils il souvent est remplacé par le Total Blocking Time (TBT)
 
