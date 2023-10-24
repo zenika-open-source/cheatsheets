@@ -8,11 +8,16 @@
     <%- include('/partials/header.ejs') %>
     <main>
       <h1>Awesome cheatsheets !</h1>
+      <div class="quick-access">
+        <% for(let category of categories) { %>
+          <a href="#<%= category.id %>" class="chip"><span class="material-symbols-outlined"><%= category.icon %></span><%= category.name %></a>
+        <% } %>
+      </div>
       <% for(let category of categories) { %>
         <% if(cheatsheetsCategories[category.id]?.length > 0) { %>
           <% var cheatsheetsContext = cheatsheetsCategories[category.id]; %>
           <h2><span class="material-symbols-outlined"><%= category.icon %></span><%= category.name %></h2>
-          <div class="cards">
+          <div class="cards" id="<%= category.id %>">
           <% for(var i = 0; i < cheatsheetsContext.length; i++) { %>
               <% var cheatsheetContext = cheatsheetsContext[i]; %>
             <a class="card" href="./<%= cheatsheetContext.cheatsheet %>/">

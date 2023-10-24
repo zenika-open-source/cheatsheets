@@ -8,5 +8,10 @@
     "id": "iot",
     "name": "IOT",
     "icon": "home_iot_device"
+  },
+  {
+    "id": "source_control",
+    "name": "Source control",
+    "icon": "captive_portal"
   }
 ]
