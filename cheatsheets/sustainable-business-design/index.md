@@ -268,7 +268,7 @@ __Faire converger les pratiques__
 > Faire converger les pratiques pour consolider le service
 :::
 
-![xx](assets/xx.png "xxx")
+![Points communs et synergies](assets/syntheses-des-synergies.png "Points communs et synergies entre ecoconception et sécurité")
 
 **Réduire l'impact environnemental d'un service, c'est notamment éviter le renouvellement du matériel, mais cela peut atteindre la sécurité des équipements dûe à l'arrêt de la maintenance des OS.**
 ::::
