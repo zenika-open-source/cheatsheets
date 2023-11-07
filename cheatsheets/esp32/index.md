@@ -59,6 +59,9 @@ digitalWrite(pin, value);
 // return value between 0 - 4095
 int analogRead(pin);
 
+// return value in millivolts
+int analogReadMilliVolts(pin);
+
 // fake analog => PWM; 0 - 255
 analogWrite(pin, value);
 ```
