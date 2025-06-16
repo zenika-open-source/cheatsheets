@@ -10,6 +10,11 @@
     "icon": "nest_eco_leaf"
   },
   {
+    "id": "web",
+    "name": "WEB",
+    "icon": "language"
+  },
+  {
     "id": "iot",
     "name": "IOT",
     "icon": "home_iot_device"

@@ -1,0 +1,9 @@
+{
+  "template": "grid-flow",
+  "mainColor": "#003366",
+  "secondaryColor": "#004D99",
+  "name": "Accessibilité en 2025",
+  "description": "Une vue d'ensemble sur l'accessibilité en 2025",
+  "categoryId": "web",
+  "icon": "assets/logo.svg"
+}
