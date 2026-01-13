@@ -1,6 +1,6 @@
 ::: column
 
-# What is it ?
+# What is it?
 
 A Conventional Commit is a standardized way of writing commit messages in version control systems like Git. It follows a specific format to make it easier to understand the purpose and scope of each commit. The Conventional Commit format is commonly used in projects that follow semantic versioning (semver) and use tools like Lerna to automate the release process.
 
@@ -19,7 +19,7 @@ Here's a cheatsheet to help you understand and use Conventional Commits:
 # Types
 
 - **feat**: A new feature or functionality added to the project.
-- **fix**: A bug fix or correction to existing code.
+- **fix**: A bugfix or correction to existing code.
 - **chore**: Routine tasks, maintenance, or non-functional changes.
 - **docs**: Documentation updates or additions.
 - **style**: Code style, formatting, or whitespace changes (not affecting the code's behavior).

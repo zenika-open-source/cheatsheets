@@ -9,7 +9,7 @@
 | - WiFi 2.4Ghz      | - Analog GPIO            |
 | - Bluetooth        | - Touch sensor           |
 | - 240Mhz dual core | - Hall sensor            |
-| - Digital GPIO     | - I2C, SPI, SD, UART,... |
+| - Digital GPIO     | - I2C, SPI, SD, UART . . . |
 
 
 # GPIOs digital specificities
@@ -109,7 +109,7 @@ void loop() {
   }
   Serial.print("Hello");
   Serial.println(" World");
-  // Not mandatory, wait for transmission finish
+  // Not mandatory, wait for transmission to finish
   Serial.flush();
 }
 ```
@@ -123,7 +123,7 @@ interrupts(); // re-enable all interruptions
 ```
 
 # Mutli threading
-/!\ do not overload core 0, this core control WiFi
+/!\ do not overload core 0 as it controls WiFi
 
 ```cpp
 // core: 0 or 1
@@ -132,7 +132,7 @@ xTaskCreatePinnedToCore(taskFunc, threadName, stackSize,
                         parameters, priority, &taskRef, core);
 vTaskDelete(taskRef);
 
-// example :
+// example:
 TaskHandle_t myThreadTask;
 xTaskCreatePinnedToCore(myThread, "My thread", 10000, 
                         NULL, 2, &myThreadTask, 0);
@@ -235,9 +235,9 @@ void loop() {
 ```
 
 
-Note that `server.handleClient();` is mandatory to tell the lib to check network stack request buffer.
+Note that `server.handleClient();` is mandatory to tell the lib to check the network stack request buffer.
 
-Otherwise, request from clients will not be accept.
+Otherwise, request from clients will not be accepted.
 
 The longer the delay between `handleClient` the longer the request connection will take.
 :::
