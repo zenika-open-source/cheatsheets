@@ -1,0 +1,8 @@
+{
+    "template": "grid-flow",
+    "mainColor": "#ff0066",
+    "secondaryColor": "#000000",
+    "name": "Storymapping",
+    "description": "How to lead a storymap workshop",
+    "icon": "assets/logo.png"
+  }
